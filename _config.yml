@@ -21,7 +21,7 @@
 title: Web Developer from Vue.js
 email: javascriptvuejs@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
- Vue.js 프레임워크 기술을 포스팅합니다.<br>
+ Vue.js 프레임워크 기술을 포스팅합니다.
  HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://javascriptvuejs.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
