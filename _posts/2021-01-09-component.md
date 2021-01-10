@@ -171,25 +171,25 @@ new Vue({
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
         <script>
-           //전역 컴포넌트 등록
+           // 전역 컴포넌트 등록
            Vue.component('my-global-component', {
                template: '<div>전역 컴포넌트입니다.</div>'
            });
 
-           //지역 컴포넌트 내용
+           // 지역 컴포넌트 내용
            var cmp = {
                template: '<div>지역 컴포넌트입니다.</div>'
            };
 
            new Vue({
                el: '#app',
-               //지역 컴포넌트 등록
+               // 지역 컴포넌트 등록
                components: {
                    'my-local-component': cmp
                }
            });
 
-           //두 번째 인스턴스
+           // 두 번째 인스턴스
            new Vue({
                el: '#app2'
            });
