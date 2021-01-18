@@ -4,15 +4,20 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# 작성자
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+변진수
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+# 직업
 
+웹 개발자
 
-[jekyll-organization]: https://github.com/jekyll
+# 포스팅 내용
+
+1. Vue.js 프레임워크 기초 지식
+2. github로 백업하기 위한 기본 git 지식
+3. Vue.js 프레임워크를 활용한 To-Do 리스트 작성 듀토리얼
+
+# 블로그 운용 목적
+
+사내의 Vue.js 프레임워크 사용 증대로 필자 포함 많은 웹 개발자들이 Vue.js를 접하게 되었다. 대부분 Vue.js를 처음 사용하기 때문에 개발에 혼란이 발생하였고 Vue.js를 따로 공부하여 익힐 시간도 부족하였다. 이에 필자는 개발자들이 기존의 가지고 있는 웹 개발 지식으로도 Vue.js를 바로 활용할 수 있도록 도움을 주고자 하였다. 즉, Vue.js는 처음 접하지만 HTML, CSS, Javascript, JQuery에 대한 기본 지식이 있는 웹 개발자가 주제별로 만들어진 포스팅을 참고하여 Vue.js로 바로 개발이 가능하게 하는 것이 목표이다. 물론 블로그를 이용하는 가장 대표적인 페르소나는 필자이다.
