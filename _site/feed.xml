@@ -1,4 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://javascriptvuejs.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://javascriptvuejs.github.io//" rel="alternate" type="text/html" /><updated>2021-01-18T11:45:50+09:00</updated><id>https://javascriptvuejs.github.io//feed.xml</id><title type="html">Web Developer from Vue.js</title><subtitle>Vue.js 프레임워크 기술을 포스팅합니다. HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.</subtitle><entry><title type="html">뷰 프로젝트 구성</title><link href="https://javascriptvuejs.github.io//2021/01/16/project.html" rel="alternate" type="text/html" title="뷰 프로젝트 구성" /><published>2021-01-16T00:00:00+09:00</published><updated>2021-01-16T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/16/project</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/16/project.html">&lt;h1 id=&quot;html-파일에서-뷰-코드-작성-시-한계점&quot;&gt;HTML 파일에서 뷰 코드 작성 시 한계점&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://javascriptvuejs.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://javascriptvuejs.github.io//" rel="alternate" type="text/html" /><updated>2021-01-18T13:38:39+09:00</updated><id>https://javascriptvuejs.github.io//feed.xml</id><title type="html">Web Developer from Vue.js</title><subtitle>Vue.js 프레임워크 기술을 포스팅합니다. HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.</subtitle><entry><title type="html">깃허브 백업</title><link href="https://javascriptvuejs.github.io//2021/01/18/github.html" rel="alternate" type="text/html" title="깃허브 백업" /><published>2021-01-18T00:00:00+09:00</published><updated>2021-01-18T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/18/github</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/18/github.html">&lt;h1 id=&quot;원격저장소&quot;&gt;원격저장소&lt;/h1&gt;
+
+&lt;p&gt;깃에서는 지역 저장소와 원격 저장소(remote repository)를 연결하여 버전 관리하는 파일들을 쉽게 백업할 수 있습니다. 원격 저장소는 지역 저장소가 아닌 컴퓨터나 서버에 만든 저장소를 말합니다.&lt;/p&gt;
+
+&lt;p&gt;깃과 관련해 원격 저장소를 제공하는 서비스는 깃허브입니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;지역-저장소와-원격-저장소-연결&quot;&gt;지역 저장소와 원격 저장소 연결&lt;/h1&gt;
+
+&lt;h2 id=&quot;지역-저장소&quot;&gt;지역 저장소&lt;/h2&gt;
+
+&lt;p&gt;디렉터리 이름으로 새 디렉터리를 만들면서 깃 저장소로 초기화합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init 디렉터리 이름&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;디렉터리 이름에 해당하는 하위 디렉터리로 이동합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd 디렉터리 이름&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;작성한 소스를 스테이지에 올립니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add 소스파일&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;스테이지에 올라와 있는 파일들을 커밋합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit -m &quot;커밋 메시지&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;원격-저장소-연결&quot;&gt;원격 저장소 연결&lt;/h2&gt;
+
+&lt;p&gt;첫째, 지역 저장소와 원격 저장소를 연결하려면 깃허브의 HTTPS 저장소 주소를 알고 있어야 합니다.&lt;/p&gt;
+
+&lt;p&gt;둘째, 다음과 같이 입력합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote add origin 저장소 주소&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이 명령은 원격 저장소(remote)에 origin을 추가(add)하겠다고 깃에게 알려주는 것입니다. 여기에서 origin은 깃허브 주소(https://github.com/…)를 가리킵니다. 깃허브 저장소 주소를 그대로 쓰면 너무 길기 떄문에 origin이라는 단어로 줄여서 remote에 추가하는 것입니다. 이렇게 지역 저장소를 특정 원격 저장소에 연결하는 것은 한 번만 하면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;셋째, 원격 저장소(remote)에 제대로 연결됐는지 확인하기 위해 다음과 같이 입력합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote -v&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;remote에 origin이 연결되어 있고 origin이 가리키는 주소가 바로 옆에 표시 될 것입니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;원격-저장소-push-및-pull&quot;&gt;원격 저장소 push 및 pull&lt;/h1&gt;
+
+&lt;p&gt;지역 저장소와 원격 저장소를 연결했으니 이제부터 지역 저장소의 소스를 원격 저장소에 올릴 수고 있고, 원격 저장소에 있는 소스를 지역 저장소로 내려받을 수도 있습니다. 이때 지역 저장소의 소스를 원격 저장소로 올리는 것을 “푸시(push)”라고 하고, 원격 저장소에서 지역 저장소로 내려받는 것을 “풀(pull)”이라고 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;원격-저장소에-파일-올리기---git-push&quot;&gt;원격 저장소에 파일 올리기 - git push&lt;/h2&gt;
+
+&lt;p&gt;다음은 지역 저장소의 브랜치를 origin, 즉 원격 저장소의 master 브랜치로 푸시하라는 명령입니다. 여기에서 “-u” 옵션은 지역 저장소의 브랜치를 원격 저장소의 master 브랜치에 연결하기 위한 것으로 처음에 한 번만 사용하만 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push -u origin master&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;한 번이라도 지역 저장소와 원격 저장소를 연결해서 푸시했다면 그다음부터는 더 간단하게 푸시할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;수정된 소스파일은 다음 명령을 이용하여 스테이징과 커밋을 한꺼번에 실행합니다. git commit 명령에서 -am은 스테이징 옵션(-a)과 메시지 옵션(-m)을 함께 쓴 것으로 최소한 한번이라도 커밋한 파일(tracked 파일)이어야 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit -am &quot;커밋 메시지&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이미 앞에서 지역 저장소의 브랜치와 origin의 master 브랜치를 연결했기 때문에 다시 파일을 푸시할 떄는 git push라고만 입력하면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;원격-저장소에서-파일-내려받기---git-pull&quot;&gt;원격 저장소에서 파일 내려받기 - git pull&lt;/h2&gt;
+
+&lt;p&gt;원격 저장소와 지역 저장소의 상태를 같게 만들기 위해 원격 저장소의 소스를 지역 저장소로 가져옵니다. 이것을 “풀(pull)한다”고 합니다.&lt;/p&gt;
+
+&lt;p&gt;다음 명령은 origin(원격 저장소) master 브랜치의 내용을 지역 저장소로 가져 온다는 뜻입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull origin master&lt;/code&gt;&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">원격저장소</summary></entry><entry><title type="html">뷰 프로젝트 구성</title><link href="https://javascriptvuejs.github.io//2021/01/16/project.html" rel="alternate" type="text/html" title="뷰 프로젝트 구성" /><published>2021-01-16T00:00:00+09:00</published><updated>2021-01-16T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/16/project</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/16/project.html">&lt;h1 id=&quot;html-파일에서-뷰-코드-작성-시-한계점&quot;&gt;HTML 파일에서 뷰 코드 작성 시 한계점&lt;/h1&gt;
 
 &lt;p&gt;실제로 뷰 애플리케이션을 제작하다 보면 다음과 같은 상황에서 파일 구조에 한계점을 느끼게 됩니다.&lt;/p&gt;
 
@@ -1931,26 +2005,4 @@ methods: {
   &lt;p&gt;&lt;strong&gt;랜더링&lt;/strong&gt;: 브라우저에 웹 페이지를 그려내는 동작&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">UI 라이브러리</summary></entry><entry><title type="html">Vue.js란 무엇인가?</title><link href="https://javascriptvuejs.github.io//2021/01/03/vuejs.html" rel="alternate" type="text/html" title="Vue.js란 무엇인가?" /><published>2021-01-03T00:00:00+09:00</published><updated>2021-01-03T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/03/vuejs</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/03/vuejs.html">&lt;h1 id=&quot;vuejs란&quot;&gt;Vue.js란?&lt;/h1&gt;
-
-&lt;p&gt;Vue.js(이하 ‘뷰’로 약칭)는 웹 페이지 화면을 개발하기 위한 ‘프론트엔드 프레임워크’입니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;프레임워크&lt;/strong&gt;: 개발자들의 개발 생산성을 높이기 위해 일정한 틀과 규칙에 따라 개발하도록 미리 구조를 정의해 놓은 도구&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;이 프론트엔드 프레임워크인 뷰는 라이브러리이기도 합니다. 어떤 의미인지 다음 그림과 함께 살펴보겠습니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;라이브러리&lt;/strong&gt;: 자주 사용되는 기능들을 모아 재활용할 수 있도록 정리한 기술 모음집&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/vuejs.png&quot; alt=&quot;vuejs&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위 그림은 뷰의 창시자인 에반 유가 2017년 Vue.js 컨퍼런스에서 발표한 프레젠테이션입니다.&lt;/p&gt;
-
-&lt;p&gt;뷰 코어 라이브러리는 웹 UI의 데이터 표현에 관한 기능들을 중점적으로 지원합니다.&lt;/p&gt;
-
-&lt;p&gt;여기에 추가하여 라우터, 상태 관리, 테스팅 등을 쉽게 결합할 수 있습니다. 이것은 여러개의 라이브러리가 결합되어 점진적으로 프레임워크가 된다는 의미입니다. 그래서 뷰&lt;a href=&quot;http://www.vuejs.org&quot;&gt;공식 사이트&lt;/a&gt;에서도 뷰를 점진적인 프레임워크라고 표현합니다.&lt;/p&gt;
-
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">Vue.js란?</summary></entry></feed>
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">UI 라이브러리</summary></entry></feed>
