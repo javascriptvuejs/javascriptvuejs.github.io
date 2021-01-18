@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>뷰 인스턴스 | Web Developer from Vue.js</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="뷰 인스턴스" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="뷰 인스턴스의 정의" />
+<meta property="og:description" content="뷰 인스턴스의 정의" />
+<link rel="canonical" href="https://javascriptvuejs.github.io//2021/01/08/instance.html" />
+<meta property="og:url" content="https://javascriptvuejs.github.io//2021/01/08/instance.html" />
+<meta property="og:site_name" content="Web Developer from Vue.js" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-08T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="뷰 인스턴스" />
+<script type="application/ld+json">
+{"headline":"뷰 인스턴스","dateModified":"2021-01-08T00:00:00+09:00","datePublished":"2021-01-08T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://javascriptvuejs.github.io//2021/01/08/instance.html"},"@type":"BlogPosting","url":"https://javascriptvuejs.github.io//2021/01/08/instance.html","description":"뷰 인스턴스의 정의","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://javascriptvuejs.github.io//feed.xml" title="Web Developer from Vue.js" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Web Developer from Vue.js</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">뷰 인스턴스</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-01-08T00:00:00+09:00" itemprop="datePublished">Jan 8, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="뷰-인스턴스의-정의">뷰 인스턴스의 정의</h1>
+
+<p>Vue로 화면을 개발하기 위해 필수적으로 생성해야 하는 기본 단위는 인스턴스(Instance)입니다.</p>
+
+<h3 id="뷰-인스턴스-형식">뷰 인스턴스 형식</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new Vue({
+    ...
+});
+</code></pre></div></div>
+
+<h2 id="뷰-인스턴스-생성자">뷰 인스턴스 생성자</h2>
+
+<p><code class="language-plaintext highlighter-rouge">new Vue()</code> 로 인스턴스를 생성하고, Vue를 생성자라고 합니다. 생성자를 사용하는 이유는 객체를 새로 생성할 때 자주 사용하는 옵션과 기능들을 미리 특정 객체에 저장해 놓고, 새로운 객체를 생성할 때 기존에 포함된 기능과 더불어 기존 기능을 쉽게 확장하여 사용하는 위해서입니다.</p>
+
+<hr />
+
+<h1 id="뷰-인스턴스-옵션-속성">뷰 인스턴스 옵션 속성</h1>
+
+<p>뷰 인스턴스 옵션 속성은 인스턴스를 생성할 때 재정의할 el, data 등의 속성을 의미합니다.</p>
+
+<h3 id="el-속성">el 속성</h3>
+<p><code class="language-plaintext highlighter-rouge">el: '#app'</code> 와 같은 형식으로 사용하며, 화면의 돔 요소중 app이라는 아이디를 가진 요소에 인스턴스를 랜더링 한다는 의미입니다.</p>
+
+<h3 id="data-속성">data 속성</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data: {
+    message: 'Hello Vue.js!'
+}
+</code></pre></div></div>
+
+<p>위와 같은 형식으로 사용하며, message라는 새로운 속성을 추가하고 message에 ‘Hello Vue.js!’ 값을 바인딩 한다는 의미입니다.</p>
+
+<hr />
+
+<h1 id="뷰-인스턴스의-유효-범위">뷰 인스턴스의 유효 범위</h1>
+
+<p>뷰 인스턴스는 생성 후 HTML의 범위 내에서만 옵션 속성들이 적용됩니다. 이를 인스턴스의 유효 범위라 합니다. 인스턴스의 유효 범위는 el 속성과 밀접한 관계가 있습니다. 즉, el 속성이 정의한 돔 요소와 그 돔 요소의 하위 요소들이 인스턴스 유효 범위입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">new Vue()</code> 로 인스턴스를 생성하고 나서 화면에 적용 되는 순서는 다음과 같습니다.</p>
+
+<ol>
+  <li>뷰 라이브러리 로딩</li>
+  <li>인스턴스 객체 생성(옵션 속성 포함)</li>
+  <li>el 속성으로 연결한 화면 요소에 인스턴스를 적용</li>
+  <li>인스턴스 내용이 화면 요소로 변환</li>
+  <li>변환된 화면 요소를 사용자가 최종 확인</li>
+</ol>
+
+<hr />
+
+<h1 id="뷰-인스턴스-라이프-사이클">뷰 인스턴스 라이프 사이클</h1>
+
+<p>뷰는 인스턴스의 상태에 따라 호출할 수 있는 속성들인 라이프 사이클(life cycle) 속성들이 있습니다. 그리고 각 라이프 사이클 속성에서 실행되는 커스텀 로직을 라이프 사이클 훅(hook)이라고 합니다.</p>
+
+<blockquote>
+  <p><strong>라이프 사이클</strong>: 모바일 앱을 비롯하여 일반적으로 애플리케이션이 가지는 생명 주기</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>커스텀 로직</strong>: 개잘자가 임의로 작성한 추가 로직</p>
+</blockquote>
+
+<p>라이프 사이클 속성에는 인스턴스의 생성, 변경, 소멸과 관련되어 총 8개가 있습니다.</p>
+
+<p><img src="/images/lifecycle.png" alt="lifecycle" /></p>
+
+<p>이 그림은 인스턴스가 생성되고 나서 화면에 인스턴스가 적용된 후 소멸되기까지의 전체적인 흐름을 나타낸 뷰 인스턴스 라이프 사이클 다이어그램입니다.</p>
+
+<p>위 그림에서 연결 - 변경 구간은 데이터가 변경되는 경우에만 거치게 됩니다.</p>
+
+<h4 id="라이프-사이클">라이프 사이클</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Instance Lifecycle<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+             {{ message }} 
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello Vue.js!</span><span class="dl">'</span>
+                <span class="p">},</span>
+                <span class="na">beforeCreate</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeCreate</span><span class="dl">'</span><span class="p">);</span>
+                <span class="p">},</span>
+                <span class="na">created</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">created</span><span class="dl">'</span><span class="p">);</span>
+                <span class="p">},</span>
+                <span class="na">mounted</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">mounted</span><span class="dl">'</span><span class="p">);</span>
+                <span class="p">},</span>
+                <span class="na">updated</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">updated</span><span class="dl">'</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>위 코드는 라이프 사이클의 4개 속성인 boforeCreate, created, mounted, updated를 추가하고 각각 로그를 출력하였습니다.</p>
+
+<p>각 로그를 확인하면 다음과 같습니다.</p>
+
+<p><img src="/images/lifecyclelog.png" alt="lifecyclelog" /></p>
+
+<p>인스턴스가 생성되는 과정에서 뷰 라이프 사이클의 흐름대로 beforeCreate, created, mounted가 출력되었습니다. 하지만 updated 속성의 메소드은 호출되지 않았습니다. 인스턴스의 데이터가 변경된 적이 없기에 실행되지 않았기 때문입니다.</p>
+
+<h4 id="message-값을-변경한-라이프-사이클">message 값을 변경한 라이프 사이클</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Instance Lifecycle<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+             {{ message }} 
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello Vue.js!</span><span class="dl">'</span>
+                <span class="p">},</span>
+                <span class="na">beforeCreate</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeCreate</span><span class="dl">'</span><span class="p">);</span>
+                <span class="p">},</span>
+                <span class="na">created</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">created</span><span class="dl">'</span><span class="p">);</span>
+                <span class="p">},</span>
+                <span class="na">mounted</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">mounted</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello Vue!</span><span class="dl">'</span><span class="p">;</span>
+                <span class="p">},</span>
+                <span class="na">updated</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">updated</span><span class="dl">'</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>위 코드를 실행하면 다음과 같은 결과 화면이 나타납니다.</p>
+
+<p><img src="/images/lifecyclelogupdated.png" alt="lifecyclelogupdated" /></p>
+
+<p>mounted 단계에서 message 값을 수정했기 때문에 데이터 수정에 의한 반응으로 updated 메소드가 실행됨을 확인할 수 있습니다. 인스턴스의 데이터가 갱신되면서 라이프 사이클 단계가 beforeUpdate, updated 단계로 진입했기 때문입니다.</p>
+
+<hr />
+
+  </div><a class="u-url" href="/2021/01/08/instance.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Web Developer from Vue.js</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Web Developer from Vue.js</li><li><a class="u-email" href="mailto:javascriptvuejs@gmail.com">javascriptvuejs@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/javascriptvuejs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">javascriptvuejs</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Vue.js 프레임워크 기술을 포스팅합니다. HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

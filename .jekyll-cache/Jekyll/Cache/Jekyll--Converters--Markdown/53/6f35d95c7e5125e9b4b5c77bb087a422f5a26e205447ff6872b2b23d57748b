@@ -1,0 +1,49 @@
+I"�<h1 id="뷰-시작하기">뷰 시작하기</h1>
+
+<p>뷰는 간단한 CDN 방식으로 제이쿼리(jQuery) 처럼 사용 할 수 있습니다.</p>
+
+<blockquote>
+  <p><strong>제이쿼리</strong>: HTML 문서의 돔 요소에 쉽게 접근하도록 유용한 기능을 제공하는 자바스크립트 라이브러리</p>
+</blockquote>
+
+<p>뷰를 CDN 방식으로 적용하여 ‘Hello Vue.js!’ 를 출력하는 예제를 만들어보겠습니다.</p>
+
+<h2 id="hello-vuejs-출력하기">Hello Vue.js 출력하기</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Sample<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+            {{ message }}
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello Vue.js!</span><span class="dl">'</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>위 코드는 HTML 기본 구조에 <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> 태그를 하나 추가하고, 뷰 코어 라이브러리를 로딩한 후 뷰로 Hello Vue.js!라는 간단한 메시지를 출력하는 코드입니다.</p>
+
+<p>먼저 자바스크립트 코드 작성 전에 CDN 방식으로 뷰 코어 라이브러리를 로딩합니다.</p>
+
+<p>자바스크립트 코드에서 new Vue 구문으로 인스턴스를 생성합니다. 인스턴스 아이디는 app이며, 데이터 속성으로 키는 message, 값은 ‘Hellow Vue.js!’ 인 객체를 가지고 있습니다.</p>
+
+<p>HTML 코드의 body 영역에서 아이디가 app를 가진 div를 만들고 그 태그 안에 <code class="language-plaintext highlighter-rouge">{{ message }}</code> 와 같이 작성합니다.</p>
+
+<p>이렇게 작성하면 뷰는 인스턴스 아이디와 동일한 아이디를 가진 돔(DOM)에 뷰로 작성한 코드인 인스턴스가 적용됩니다. 아이디가 app인 뷰의 인스턴스가 아이디로 app을 가진 div 태그에 적용 되는 것입니다.</p>
+
+<p>그 다음 데이터 객체의 키와 같은 키가 {{ }} 기호 안에 작성되면 그 키의 값이 로딩됩니다.</p>
+
+<p>즉, 인스턴스가 적용된 div 태그 안에 있는 <code class="language-plaintext highlighter-rouge">{{ message }}</code> 에 인스턴스의 데이터 객체에서 키가 message인 프로퍼티(property)의 값을 로딩합니다.</p>
+
+<hr />
+:ET

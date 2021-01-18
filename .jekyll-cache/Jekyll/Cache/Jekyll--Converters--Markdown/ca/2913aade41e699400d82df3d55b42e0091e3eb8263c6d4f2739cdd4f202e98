@@ -1,0 +1,503 @@
+I"8�<h1 id="뷰-템플릿">뷰 템플릿</h1>
+
+<p>뷰의 템플릿은 HTML, CSS 등의 마크업 속성과 뷰 인스턴스에서 정의한 데이터 및 로직들을 연결하여 사용자가 브라우저에서 볼 수 있는 형태의 HTML로 변환해 주는 속성입니다.</p>
+
+<p>템플릿 속성을 사용하는 방법은 두 가지로, 하나는 ES5에서 뷰 인스턴스의 template 속성을 활용하는 방법입니다. <code class="language-plaintext highlighter-rouge">template: '&lt;p&gt;Hello {{ message }}&lt;/p&gt;'</code> 와 같은 코드가 템플릿을 의미합니다.</p>
+
+<h3 id="es5에서-template-속성">ES5에서 template 속성</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;
+    new Vue({
+        template: '&lt;p&gt;Hello {{ message }}&lt;/p&gt;'
+    });
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>여기서 템플릿 속성에 대해 한 가지 알아둘 특징이 있습니다. 사용자가 볼 수는 없지만 라이브러리 내부적으로 template 속성에서 정의한 마크업 + 뷰 데이터를 가상 돔 기반의 render() 함수로 변환합니다. 변환된 render() 함수는 최종적으로 사용자가 볼 수 있게 화면을 랜더링하는 역할을 합니다.</p>
+
+<h3 id="render-함수">render() 함수</h3>
+
+<p>리액트에서는 template 속성을 이용하지 않고 JSX 기반의 render() 함수를 사용해 화면 요소를 구현합니다. 그러나 뷰 프레임워크에서는 JSX나 render() 함수를 모르더라도 template 속성을 이용하면 render() 함수로 자동 변환됩니다.</p>
+
+<p>추후에 뷰의 반응성과 가상 돔에 대해 충분히 이해하고 나면 render() 함수를 직접 구현할 수 있습니다. 그러면 화면 요소의 동작 하나 하나에 직접 관여할 수 있습니다.</p>
+
+<h3 id="template-속성을-사용한-경우-vs-template-속성을-사용하지-않은-경우">template 속성을 사용한 경우 vs template 속성을 사용하지 않은 경우</h3>
+
+<h4 id="template-속성을-사용하지-않은-경우">template 속성을 사용하지 않은 경우</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div id="app"&gt;
+    &lt;h3&gt;{{ message }}&lt;/h3&gt;
+&lt;/div&gt;
+...
+&lt;script&gt;
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        }
+    });
+&lt;/script&gt;
+</code></pre></div></div>
+
+<h4 id="template-속성을-사용한-경우">template 속성을 사용한 경우</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div id="app"&gt;
+&lt;/div&gt;
+...
+&lt;script&gt;
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        },
+        template: '&lt;h3&gt;{{ message }}&lt;/h3&gt;'
+    });
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>template 속성을 사용하지 않은 경우는 <code class="language-plaintext highlighter-rouge">&lt;h3&gt;{{ message }}&lt;/h3&gt;</code> 를 화면에 표시하고, 인스턴스가 생성되면 message의 값을 Hello Vue.js로 치환합니다. template 속성을 사용한 경우는 <code class="language-plaintext highlighter-rouge">&lt;div id="app"&gt;</code>에 아무런 내용이 없다가 인스턴스가 생성되면 <code class="language-plaintext highlighter-rouge">&lt;h3&gt;Hello Vue.js!&lt;/h3&gt;</code> 가 화면에 붙어 표시됩니다.</p>
+
+<hr />
+
+<h1 id="데이터-바인딩">데이터 바인딩</h1>
+
+<p>데이터 바인딩(Data binding)은 HTML 화면 요소를 뷰 인스턴스의 데이터와 연결하는 것을 의미합니다. 주요 문법으로는 {{ }} 문법과 v-bind 속성이 있습니다.</p>
+
+<h2 id="----콧수염-괄호">{{ }} - 콧수염 괄호</h2>
+
+<p>{{ }}는 뷰 인스턴스의 데이터를 HTML 태그에 연결하는 가장 기본적인 텍스트 삽입 방식입니다. 모양이 콧수염과 비슷하다고 하여 콧수염 괄호라고 부릅니다. 뷰 뿐만 아니라 다른 언어나 프레임워크에서도 자주 사용되는 템플릿 문법(template syntax)입니다.</p>
+
+<h3 id="-를-이용한-데이터-바인딩">{{ }}를 이용한 데이터 바인딩</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div id="app"&gt;
+    {{ message }}
+&lt;/div&gt;
+
+&lt;script&gt;
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        }
+    });
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>위 코드는 data 속성의 message 속성 값인 Hello Vue.js!를 <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> 태그 안의 {{ message }}에 연결하여 화면에 나타내는 코드입니다. 여기서 만약 data 속성의 message값이 바뀌면 뷰 반응성에 의해 화면이 자동으로 갱신됩니다.</p>
+
+<h3 id="v-once-속성을-이용한-1회-바인딩">v-once 속성을 이용한 1회 바인딩</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div id="app" v-once&gt;
+    {{ message }}
+&lt;/div&gt;
+</code></pre></div></div>
+
+<p>만약 데이터가 변경되어도 값을 바꾸고 싶지 않다면 위와 같이 v-once 속성을 사용합니다.</p>
+
+<h2 id="v-bind">v-bind</h2>
+
+<p>v-bind는 아이디, 클래스, 스타일 등의 HTML 속성(attributes) 값에 뷰 데이터 값을 연결할 때 사용하는 데이터 연결 방식입니다. 형식은 v-bind 속성으로 지정할 HTML 속성이나 props 속성 앞에 접두사로 붙여줍니다.</p>
+
+<h3 id="v-bind-1">v-bind</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Template - Data Binding<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">v-bind:id=</span><span class="s">"idA"</span><span class="nt">&gt;</span>아이디 바인딩<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">v-bind:class=</span><span class="s">"classA"</span><span class="nt">&gt;</span>클래스 바인딩<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">v-bind:style=</span><span class="s">"styleA"</span><span class="nt">&gt;</span>스타일 바인딩<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+           <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+               <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+               <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="na">idA</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                   <span class="na">classA</span><span class="p">:</span> <span class="dl">'</span><span class="s1">container</span><span class="dl">'</span><span class="p">,</span>
+                   <span class="na">styleA</span><span class="p">:</span> <span class="dl">'</span><span class="s1">color: blue</span><span class="dl">'</span>
+               <span class="p">}</span>
+           <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>위 코드는 HTML의 기본 속성인 id, class, style의 앞에 v-bind:를 붙여서 뷰 인스턴스에서 정의한 데이터 속성과 연결하여 화면에 나타냅니다. 코드를 실행하면 아래와 같이 <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> 태그에 연결되어 화면에 나타납니다.</p>
+
+<p><img src="/images/v-bind.png" alt="v-bind" /></p>
+
+<p>실행 결과 화면을 보면 데이터 속성의 idA, classA, styleA 값이 화면의 요소에 각각 연결되어 나타납니다. style 속성은 스타일 값이 적용되면서 바로 화면에 반영됩니다.</p>
+
+<p>v-bind 문법을 :로 간소화할 수 있습니다. 예를 들어, v-bind:id와 :id는 같은 동작을 합니다. 이처럼 약식 문법을 사용할 때는 기본 문법과 약식 문법을 혼용해서 사용하지 않는 것이 좋습니다.</p>
+
+<hr />
+
+<h1 id="자바스크립트-표현식">자바스크립트 표현식</h1>
+
+<p>뷰의 템플릿에서도 자바스크립트 표현식을 쓸 수 있습니다. 데이터 바인딩 방법 중 하나인 {{ }} 안에 자바스크립트 표현식을 넣으면 됩니다. 다음 코드는 message 값을 화면에 나타낼 떄 자바스크립트 연산을 이용하여 다양한 결과를 표현합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Template - Javascript Expression<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>{{ message }}<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;</span>{{ message + "!!!" }}<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;</span>{{ message.split('').reverse().join('') }}<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+          <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+              <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+              <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello Vue.js!</span><span class="dl">'</span>
+              <span class="p">}</span>
+          <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>첫 번째 <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> 태그는 message의 값을 Hello Vue.js!를 그대로 출력합니다. 두 번째 <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> 태그는 message 값에 문자열 !!!를 추가하여 출력하기 때문에 Hello Vue.Js!!!!가 출력됩니다. 세 번째 <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> 태그는 문자열 Hello Vue.js!의 순서를 바꿔 !sj.euV olleH로 출력합니다. 문자열 순서를 바꾸기 위해 자바스크립트 내장 API를 사용하였습니다.</p>
+
+<p>이와 같이 자바스크립트 표현식을 이용하면 데이터를 원하는 형태로 표현할 수 있습니다.</p>
+
+<h2 id="자바스크립트-표현식-주의할-점">자바스크립트 표현식 주의할 점</h2>
+
+<p>자바스크립트 표현식을 사용할 때 주의할 점이 두가지 있습니다. 첫째, 자바스크립트 선언문과 분기 구문은 사용할 수 없습니다.
+둘째, 복잡한 연산은 인스턴스 안에서 처리하고 화면에는 간단한 연산 결과만 표시해야 합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Template - Javascript Expression<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+           <span class="c">&lt;!-- {{ var a = 10; }} --&gt;</span> <span class="c">&lt;!-- X, 선언문은 사용 불가능 --&gt;</span>
+           <span class="c">&lt;!-- {{ if(true) {return 100} }} --&gt;</span> <span class="c">&lt;!--  X, 분기 구문은 사용 불가능 --&gt;</span>
+           {{ true ? 100 : 0 }} <span class="c">&lt;!-- O, 삼항 연산자로 표현 가능 --&gt;</span>
+
+           {{ message.split('').reverse().join('') }}   <span class="c">&lt;!-- X, 복잡한 연산은 인스턴스 안에서 수행 --&gt;</span>
+           {{ reversedMessage }} <span class="c">&lt;!-- O, 스크립트에서 computed 속성으로 계산한 후 최종 값만 표현 --&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+ 
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello Vue.js!</span><span class="dl">'</span>
+                <span class="p">},</span>
+                <span class="na">computed</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">reversedMessage</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">''</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>{{ var a = 10; }}은 자바스크립트 선언문이고, {{ if(true) {return 100} }}은 분기 구문이므로 브라우저로 실행하면 오류가 발생합니다. 분기 구문과 동일한 로직을 처리하려면 자바스크립트 삼항 연살자를 사용합니다. 따라서 {{ if(true) {return 100} }}에 삼항 연산자를 적용한 {{ true ? 100 : 0 }}으로 대체합니다.</p>
+
+<blockquote>
+  <p><strong>삼항 연산자</strong>: 조건에 따라 정의한 두 식 중 하나를 반환하는 연산자. 조건 ? 식 1 : 식 2 조건이 참이면 식 1을 반환하고, 거짓이면 식 2를 반환</p>
+</blockquote>
+
+<p>message의 텍스트 값을 역순으로 변환하는 연산은 HTML 단에서 수행하지 않고, 자바스크립트 단에서 computed 속성을 이용하여 계산한 후 최종 결과 값만 표시합니다. 반복적인 연산에 대해서는 미리 계산하여 저장해 놓고, 필요할 때 바로 불러오는 캐싱(caching) 효과를 얻을 수 있습니다.</p>
+
+<blockquote>
+  <p><strong>캐싱</strong>: 데이터나 값을 임시 장소에 미리 복사해 놓는 동작. 일반적으로 데이터에 접근하는 시간이나 값을 다시 계산하는 시간이 오래 걸릴 때 해당 값을 미리 임시 장소에 저장해 놓고 필요할 때 바로 불러올 수 있기 때문에 수행 시간이 훨씬 빠름</p>
+</blockquote>
+
+<hr />
+
+<h1 id="디렉티브">디렉티브</h1>
+
+<p>뷰 디렉티브(Directive)란 HTML 태그 안에 v- 접두사를 가지는 모든 속성을 의미합니다. v-bind 속성도 디렉티브에 해당됩니다.</p>
+
+<h3 id="디렉티브-형식">디렉티브 형식</h3>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;a v-if="flag"&gt;두잇 Vue.js&lt;/a&gt;</code></p>
+
+<p>위 <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code>태그는 뷰 인스턴스 데이터 속성에 정의된 flag 값에 따라 보이기도 하고 안 보이기도 합니다. flag 값이 참(true)이면 “두잇 Vue.js” 텍스트가 화면에 보일 것이고, 값이 거짓(false)이면 <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> 전체가 표시되지 않아 텍스트가 화면에서 보이지 않습니다.</p>
+
+<p>디렉티브는 화면의 요소를 더 쉽게 조작하기 위해 사용하는 기능입니다. 뷰의 데이터 값이 변경되었을 때 화면의 요소들이 리액티브(Reactive)하게 반응하여 변경된 데이터 값에 따라 갱신됩니다.</p>
+
+<hr />
+
+<p><strong>v-if</strong>: 지정한 뷰 데이터 값의 참, 거짓 여부에 따라 해당 HTML 태그를 화면에 표시하거나 표시하지 않습니다.</p>
+
+<p><strong>v-for</strong>: 지정한 뷰 데이터의 개수만큼 해당 HTML 태그를 반복 출력합니다.</p>
+
+<p><strong>v-show</strong>: v-if와 유사하게 데이터의 진위 여부에 따라 해당 HTML 태그를 화면에 표시하거나 표시하지 않습니다. 다만, v-if는 해당 태그를 완전히 삭제하지만 v-show는 css효과만 display:none으로 주어 실제 태그는 남아 있고 화면 상으로만 보이지 않습니다.</p>
+
+<p><strong>v-bind</strong>: HTML 태그의 기본 속성과 뷰 데이터 속성을 연결합니다.</p>
+
+<p><strong>v-on</strong>: 화면 요소의 이벤트를 감지하여 처리할 때 사용합니다. 예를 들어, v-on:click은 해당 태그의 클릭 이벤트를 감지하여 특정 메서드를 실행합니다.</p>
+
+<p><strong>v-model</strong>: 폼(form)에서 주로 사용되는 속성입니다. 폼에 입력한 값을 뷰 인스턴스의 데이터와 즉시 동기화한다. 화면에 입력된 값을 저장하여 서버에 보내거나 watch와 같은 속성을 이용하여 추가 로직을 수행할 수 있습니다. <code class="language-plaintext highlighter-rouge">&lt;input&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;select&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;textarea&gt;</code> 태그에만 사용할 수 있습니다.</p>
+
+<hr />
+
+<h3 id="많이-사용되는-디렉티브">많이 사용되는 디렉티브</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Template - Directives<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">v-if=</span><span class="s">"flag"</span><span class="nt">&gt;</span>두잇 Vue.js<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">v-for=</span><span class="s">"system in systems"</span><span class="nt">&gt;</span>{{ system }}<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">v-show=</span><span class="s">"flag"</span><span class="nt">&gt;</span>두잇 Vue.js<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;h5</span> <span class="na">v-bind:id=</span><span class="s">"uid"</span><span class="nt">&gt;</span>뷰 입문서<span class="nt">&lt;/h5&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">v-on:click=</span><span class="s">"popupAlert"</span><span class="nt">&gt;</span>경고 창 버튼<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">flag</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="na">systems</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">android</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ios</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">window</span><span class="dl">'</span><span class="p">],</span>
+                    <span class="na">uid</span><span class="p">:</span> <span class="mi">10</span>
+                <span class="p">},</span>
+                <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">popupAlert</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">경고 창 표시</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>v-if: 분기 처리의 조건 값인 flag 값이 true 이므로 “두잇 Vue.js” 텍스트를 화면에 표시합니다.</li>
+  <li>v-for: 뷰 데이터 systems는 android, ios, window의 총 3개의 값을 가지는 배열입니다. 이 배열의 요소 개수만큼 <code class="language-plaintext highlighter-rouge">&lt;li&gt;</code> 태그가 반복되어 {{ system }}으로 각 요소의 값을 화면에 표시합니다.</li>
+  <li>v-show: v-if와 마찬가지로 flag 값이 true이므로 “두잇 Vue.js”를 화면에 표시합니다.</li>
+  <li>v-bind: HTML 태그의 id 속성의 값을 뷰 데이터에 선언한 uid 값과 연결하여 화면에 표시합니다.</li>
+  <li>v-on: [경고 창 버튼]을 클릭했을 때 해당 이벤트를 감지하여 methods 속성에 선안한 popupAlert() 메서드를 수행하여 브라우저 기본 경고 창을 엽니다.</li>
+</ol>
+
+<hr />
+
+<h1 id="이벤트-처리">이벤트 처리</h1>
+
+<p>화면에서 발생한 이벤트를 처리하기 위해 v-on 디렉티브와 methods 속성을 활용합니다.</p>
+
+<h3 id="v-on-디렉티브-이벤트-처리">v-on 디렉티브 이벤트 처리</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Template - Event Handling<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">v-on:click=</span><span class="s">"clickBtn"</span><span class="nt">&gt;</span>클릭<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">clickBtn</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                        <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">clicked</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>위 코드는 <code class="language-plaintext highlighter-rouge">&lt;button&gt;</code> 태그에 v-on:click 디렉티브를 추가하여 [클릭] 버튼을 클릭하면 clickBtn() 메서드가 실행되도록 지정하였습니다. 따라서 [클릭] 버튼을 클릭하면 methods 속성의 clickBtn() 메서드에 정의한 alert() 내장 API가 실행됩니다.</p>
+
+<h3 id="v-on-디렉티브-인자-값">v-on 디렉티브 인자 값</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Template - Event Handling<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">v-on:click=</span><span class="s">"clickBtn(10)"</span><span class="nt">&gt;</span>클릭<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">clickBtn</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">clicked </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">num</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> times</span><span class="dl">'</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>호출된 메서드 이름인 clickBtn 만 적지 않고, clickBtn(10)으로 적었습니다. 메서드에서도 clickBtn: function(num) { }로 num 인자를 받을 수 있게 구현했기 때문에 [클릭] 버튼을 클릭하면 넘겨받은 인자 값인 10을 사용하여 경고 창 메시지를 생성합니다.</p>
+
+<h3 id="event-인자">event 인자</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Template - Event Handling<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">v-on:click=</span><span class="s">"clickBtn"</span><span class="nt">&gt;</span>클릭<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+            <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">clickBtn</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>HTML 태그에서 v-on:click으로 호출하는 메서드에 인자를 전달하지 않아도 function(event) { }와 같이 event 인자를 정의하면 해당 돔 요소의 이벤트 객체에 접근할 수 있습니다.</p>
+
+<hr />
+
+<h1 id="고급-템플릿-기법">고급 템플릿 기법</h1>
+
+<p>고급 템플릿 기법은 데이터 바인딩, 디렉티브와 같은 기본적인 문법과 함께 사용합니다.</p>
+
+<h2 id="conputed-속성">conputed 속성</h2>
+
+<p>데이터를 가공하는 등의 복잡한 연산은 뷰 인스턴스 안에서 하고 최종적으로 HTML에는 데이터를 표현만 합니다. computed 속성은 이러한 데이터 연산들을 정의하는 영역입니다.</p>
+
+<h3 id="computed-속성을-이용한-문자열-순서-변환-코드">computed 속성을 이용한 문자열 순서 변환 코드</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+&lt;div id="app"&gt;
+    {{ reversedMessage }}
+&lt;/div&gt;
+ ...
+&lt;script&gt;
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        },
+        computed: {
+            reversedMessage: function() {
+                return this.message.split('').reverse().join('');
+            }
+        }
+    });
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>HTML에 바로 {{ message.splig(‘’).reverse().join(‘’) }}를 정의할 수도 있지만 앞의 코드처럼 computed 속성인 reversedMessage를 활용합니다.</p>
+
+<p>computed 속성의 첫 번째 장점은 data 속성 값의 변화에 따라 자동으로 다시 연산한다는 점입니다. 예를 들어, computed 속성에서 사용하고 있는 data 속성 값이 변경되면 전체 값을 다시 한번 계산합니다. 두 번째 장점은 캐싱입니다. 동일한 연산을 반복해서 하지 않기 위해 연산의 결과 값을 미리 저장하고 있다가 필요할 때 불러오는 동작입니다.</p>
+
+<h2 id="computed-속성과-methods-속성의-차이점">computed 속성과 methods 속성의 차이점</h2>
+
+<p>methods 속성과 computed 속성의 가장 큰 차이점은 methods 속성은 호출할 때만 해당 로직이 수행되고, computed 속성은 대상 데이터의 값이 변경되면 자동으로 수행된다는 것입니다. 수동적으로 데이터를 갱신하느냐, 능동적으로 데이터를 갱신하느냐의 차이라고 할 수 있습니다.</p>
+
+<h3 id="computed-속성과-methods-속성">computed 속성과 methods 속성</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Template - Computed vs Methods<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">v-on:click=</span><span class="s">"reverseMsg"</span><span class="nt">&gt;</span>문자열 역순<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+           <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+               <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+               <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello Vue.js!</span><span class="dl">'</span>
+               <span class="p">},</span>
+               <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="na">reverseMsg</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                       <span class="k">this</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">''</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+                       <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+                   <span class="p">}</span>
+               <span class="p">}</span>
+           <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>위 코드는 앞에서 살펴본 computed 속성으로 문자열 순서를 바꾼 코드와 동일한 결과를 냅니다. 다만 차이점이 있다면 [문자열 역순] 버튼을 클릭했을 떄만 문자열 순서를 역으로 변환한다는 것입니다.</p>
+
+<p>methods 속성은 수행할 때마다 연산을 하기 때문에 별도로 캐싱을 하지 않지만, computed 속성은 데이터가 변경되지 않는 한 이전의 계산 값을 가지고 있다가(캐싱하고 있다가) 필요할 때 바로 반환해 줍니다.</p>
+
+<h2 id="watch-속성">watch 속성</h2>
+
+<p>watch 속성은 데이터 변화를 감지하여 자동으로 특정 로직을 수행합니다. computed 속성과 유사하지만 computed 속성은 내장 API를 활용한 간단한 연산 정도로 적합한 반면에, watch 속성은 데이터 호출과 같이 시간이 상대적으로 더 많이 소모되는 비동기 처리에 적합합니다.</p>
+
+<h3 id="비동기-처리">비동기 처리</h3>
+
+<p>데이터를 호출할 때 인반적으로는 서버에 http 요청을 보냅니다. 그런데 자바크스립트 코드가 실행되는 시점에서는 서버에 보낸 요청이 언제 응답 올지 알 수 없습니다. 따라서 자바스크립트 연산에 영향을 주지 못하도록 별도의 영역(실행 컨텐스트)에서 해당 데이터를 요청하고 응답을 기다립니다. 이를 자바스크립트 비동기 처리 로직이라고 합니다.</p>
+
+<h3 id="watch-속성-1">watch 속성</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Vue Template - Watch<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">v-model=</span><span class="s">"message"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script&gt;</span>
+           <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+               <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+               <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hello Vue.js!</span><span class="dl">'</span>
+               <span class="p">},</span>
+               <span class="na">watch</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="na">message</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">message의 값이 바뀝니다 : </span><span class="dl">'</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+                   <span class="p">}</span>
+               <span class="p">}</span>
+           <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>위 코드는 인풋 박스(input box)의 입력 값을 v-model 디렉티브로 연결하여 입력 값에 변화가 있을 때마다 watch 속성에서 변화된 값을 로그로 출력합니다.</p>
+
+<p><img src="/images/watch.png" alt="watch" />
+<img src="/images/watchinput.png" alt="watchinput" /></p>
+
+<hr />
+:ET
