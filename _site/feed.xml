@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://javascriptvuejs.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://javascriptvuejs.github.io//" rel="alternate" type="text/html" /><updated>2021-01-19T11:15:26+09:00</updated><id>https://javascriptvuejs.github.io//feed.xml</id><title type="html">Web Developer from Vue.js</title><subtitle>Vue.js 프레임워크 기술을 포스팅합니다. HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.</subtitle><entry><title type="html">깃허브 백업</title><link href="https://javascriptvuejs.github.io//2021/01/19/github.html" rel="alternate" type="text/html" title="깃허브 백업" /><published>2021-01-19T00:00:00+09:00</published><updated>2021-01-19T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/19/github</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/19/github.html">&lt;h1 id=&quot;원격저장소&quot;&gt;원격저장소&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://javascriptvuejs.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://javascriptvuejs.github.io//" rel="alternate" type="text/html" /><updated>2021-01-19T12:31:00+09:00</updated><id>https://javascriptvuejs.github.io//feed.xml</id><title type="html">Web Developer from Vue.js</title><subtitle>Vue.js 프레임워크 기술을 포스팅합니다. HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.</subtitle><entry><title type="html">깃허브 백업</title><link href="https://javascriptvuejs.github.io//2021/01/19/github.html" rel="alternate" type="text/html" title="깃허브 백업" /><published>2021-01-19T00:00:00+09:00</published><updated>2021-01-19T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/19/github</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/19/github.html">&lt;h1 id=&quot;원격저장소&quot;&gt;원격저장소&lt;/h1&gt;
 
 &lt;p&gt;깃에서는 지역 저장소와 원격 저장소(remote repository)를 연결하여 버전 관리하는 파일들을 쉽게 백업할 수 있습니다. 원격 저장소는 지역 저장소가 아닌 컴퓨터나 서버에 만든 저장소를 말합니다.&lt;/p&gt;
 
@@ -72,7 +72,7 @@
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull origin master&lt;/code&gt;&lt;/p&gt;
 
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">원격저장소</summary></entry><entry><title type="html">할 일 관리 애플리케이션 듀토리얼(1/6) - 살펴보기</title><link href="https://javascriptvuejs.github.io//2021/01/19/todopreview.html" rel="alternate" type="text/html" title="할 일 관리 애플리케이션 듀토리얼(1/6) - 살펴보기" /><published>2021-01-19T00:00:00+09:00</published><updated>2021-01-19T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/19/todopreview</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/19/todopreview.html">&lt;h1 id=&quot;할-일-관리-애플리케이션&quot;&gt;할 일 관리 애플리케이션&lt;/h1&gt;
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">원격저장소</summary></entry><entry><title type="html">할 일 관리 애플리케이션 튜토리얼(1/6) - 살펴보기</title><link href="https://javascriptvuejs.github.io//2021/01/19/todopreview.html" rel="alternate" type="text/html" title="할 일 관리 애플리케이션 튜토리얼(1/6) - 살펴보기" /><published>2021-01-19T00:00:00+09:00</published><updated>2021-01-19T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/19/todopreview</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/19/todopreview.html">&lt;h1 id=&quot;할-일-관리-애플리케이션&quot;&gt;할 일 관리 애플리케이션&lt;/h1&gt;
 
 &lt;p&gt;프런트엔드 프레임워크를 배울 때 할 일 관리 애플리케이션은 꼭 구현해 봐야 합니다. 실무에서 서비스를 만들 때 사용하는 데이터 조작 방법(삽입, 조회, 변경, 삭제)을 구현해 볼 수 있기 때문입니다. 기업의 실제 서비스는 데이터 조작 방법 4가지에서 크게 벗어나지 않고 화면을 더 추가하는 방식으로 개발됩니다.&lt;/p&gt;
 
@@ -88,7 +88,7 @@
 
 &lt;p&gt;여기서 추가된 할 일 텍스트 데이터는 모두 브라우저 저장소인 로컬 스토리지(Local Storage)에 저장됩니다. 브라우저 저장소를 사용하여 서버와 데이터베이스를 별도로 구성하지 않고 간단하게 데이터를 저장하고, 삭제할 수 있도록 구현하겠습니다. 저장된 데이터의 형식은 키(key) : 값(value)입니다.&lt;/p&gt;
 
-&lt;h2 id=&quot;로컬-스토리지에-저장된-키--값-형태의-데이터&quot;&gt;로컬 스토리지에 저장된 키 : 값 형태의 데이터&lt;/h2&gt;
+&lt;h3 id=&quot;로컬-스토리지에-저장된-키--값-형태의-데이터&quot;&gt;로컬 스토리지에 저장된 키 : 값 형태의 데이터&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/todolocalstorage.PNG&quot; alt=&quot;todolocalstorage&quot; /&gt;&lt;/p&gt;
 
@@ -102,7 +102,85 @@
 
 &lt;p&gt;여기서는 제목인 Header 영역, 리스트를 등록하는 Input 영역, 리스트를 보여주는 List 영역, 리스트를 전체 삭제하는 Footer 영역으로 구조화하겠습니다.&lt;/p&gt;
 
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">할 일 관리 애플리케이션</summary></entry><entry><title type="html">뷰 프로젝트 구성</title><link href="https://javascriptvuejs.github.io//2021/01/16/project.html" rel="alternate" type="text/html" title="뷰 프로젝트 구성" /><published>2021-01-16T00:00:00+09:00</published><updated>2021-01-16T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/16/project</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/16/project.html">&lt;h1 id=&quot;html-파일에서-뷰-코드-작성-시-한계점&quot;&gt;HTML 파일에서 뷰 코드 작성 시 한계점&lt;/h1&gt;
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">할 일 관리 애플리케이션</summary></entry><entry><title type="html">할 일 관리 애플리케이션 튜토리얼(1/6) - 프로젝트 생성</title><link href="https://javascriptvuejs.github.io//2021/01/19/todocli.html" rel="alternate" type="text/html" title="할 일 관리 애플리케이션 튜토리얼(1/6) - 프로젝트 생성" /><published>2021-01-19T00:00:00+09:00</published><updated>2021-01-19T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/19/todocli</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/19/todocli.html">&lt;h1 id=&quot;뷰-cli-프로젝트-생성&quot;&gt;뷰 CLI 프로젝트 생성&lt;/h1&gt;
+
+&lt;p&gt;뷰 CLI로 프로젝트를 생성합니다. 원하는 위치에 새로운 폴더를 생성하고 명령 프롬프트 창에 아래와 같이 vue init webpack-simple를 입력하고 실행합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;vue-init-webpack-simple-명령어-실행-결과&quot;&gt;vue init webpack-simple 명령어 실행 결과&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todocli.PNG&quot; alt=&quot;todocli&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 그림은 vue-todo 폴더로 이동해서 webpack-simple 프로젝트를 생성하는 과정을 보여주는 창입니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;cd&lt;/strong&gt;: 폴더 이름과 함께 입력하면 해당 폴더로 이동하는 명령어입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;dir&lt;/strong&gt;: 현재 폴더 내에 있는 파일과 폴더의 목록을 보여줍니다. 맥에서는 ls로 입력합니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;현재 디렉터리에 프로젝트 생성, 프로젝트 이름, 프로젝트 정보, 저자, 라이선스, Sass 사용 여부를 설정합니다. 그리고 npm install 명령어를 입력하여 package.json 파일(npm 설정 파일)에 등록된 자바스크립트 라이브러리를 모두 다운로드합니다. 설치 완료 후 npm run dev를 실행하여 애플리케이션이 정상적으로 실행되는지 확인합니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;프로젝트-초기-설정&quot;&gt;프로젝트 초기 설정&lt;/h1&gt;
+
+&lt;p&gt;프로젝트에 반응형 웹 디자인 태그와 아이콘 및 폰트 CSS를 설정하겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;반응형-웹-디자인-태그-설정&quot;&gt;반응형 웹 디자인 태그 설정&lt;/h2&gt;
+
+&lt;p&gt;반응형 웹 디자인(Responsive Web Design)은 하나의 웹 사이트로 PC, 모바일, 태블릿 등 어느 기기에서도 깨지지 않는 자연스러운 레이아웃을 제공하는 웹 디자인 방법입니다.&lt;/p&gt;
+
+&lt;p&gt;index.html 파일의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 태그에 아래와 같이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;meta&amp;gt;&lt;/code&gt; 태그를 추가합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;viewport-메타-태그-추가&quot;&gt;viewport 메타 태그 추가&lt;/h3&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;vue-todo&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이렇게 viewport 메타 태그를 추가하면 PC 웹 화면뿐만 아니라 모바일 웹에서도 레이아웃이 깨지지 않고 잘 보입니다. 여기서 사용한 width=device-width 속성은 기기의 너비만큼 웹 페이지의 너비를 지정하라는 의미입니다. 그리고 initial-scale=1.0은 페이지의 배율로, 페이지가 로딩되었을 떄 줌(zoom)레벨을 의미합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;어썸-아이콘-css-설정&quot;&gt;어썸 아이콘 CSS 설정&lt;/h2&gt;
+
+&lt;p&gt;애플리케이션의 예쁜 UI를 위해 일반 문자열 버튼 대신 어썸 아이콘(Awesome Icon)을 활용합니다.&lt;/p&gt;
+
+&lt;p&gt;어썸 아이콘을 사용하려면 다음과 같이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 태그에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;link&amp;gt;&lt;/code&gt; 태그를 추가합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;폰트-어썸-아이콘-css를-추가한-head-태그-내용&quot;&gt;폰트 어썸 아이콘 CSS를 추가한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 태그 내용&lt;/h3&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://use.fontawesome.com/releases/v5.0.10/css/all.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;vue-todo&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;어썸 아이콘 스타일시트를 CDN 방식으로 적용한 것입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;폰트와-파비콘-설정&quot;&gt;폰트와 파비콘 설정&lt;/h2&gt;
+
+&lt;p&gt;애플리케이션에서 사용할 폰트(font)와 파비콘(favicon)을 설정합니다. 파비콘은 브라우저로 웹을 실행했을 때 웹 사이트 제목의 왼쪽에 표시되는 로고를 의미합니다. 폰트는 구글 폰트 중 Ubuntu를 사용하고, 파비콘은 뷰에서 제공하는 기본 로고를 사용하겠습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;구글-폰트와-파비콘을-추가한-head&quot;&gt;구글 폰트와 파비콘을 추가한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://use.fontawesome.com/releases/v5.0.10/css/all.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shortcut icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;src/assets/favicon.ico&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;image/x-icon&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;src/assets/favicon.ico&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;image/x-icon&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://fonts.googleapis.com/css?family=Ubuntu&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;vue-todo&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;프로젝트 내의 assets 폴더 밑의 logo.png 파일을 파비콘 파일(favicon.ico)로 변환하여 assets 폴더에 넣고 위의 링크를 추가합니다. 구글 폰트는 스타일시트를 CDN 방식으로 적용합니다.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">뷰 CLI 프로젝트 생성</summary></entry><entry><title type="html">뷰 프로젝트 구성</title><link href="https://javascriptvuejs.github.io//2021/01/16/project.html" rel="alternate" type="text/html" title="뷰 프로젝트 구성" /><published>2021-01-16T00:00:00+09:00</published><updated>2021-01-16T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/16/project</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/16/project.html">&lt;h1 id=&quot;html-파일에서-뷰-코드-작성-시-한계점&quot;&gt;HTML 파일에서 뷰 코드 작성 시 한계점&lt;/h1&gt;
 
 &lt;p&gt;실제로 뷰 애플리케이션을 제작하다 보면 다음과 같은 상황에서 파일 구조에 한계점을 느끼게 됩니다.&lt;/p&gt;
 
@@ -1924,51 +2002,4 @@ methods: {
 
 &lt;p&gt;mounted 단계에서 message 값을 수정했기 때문에 데이터 수정에 의한 반응으로 updated 메소드가 실행됨을 확인할 수 있습니다. 인스턴스의 데이터가 갱신되면서 라이프 사이클 단계가 beforeUpdate, updated 단계로 진입했기 때문입니다.&lt;/p&gt;
 
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">뷰 인스턴스의 정의</summary></entry><entry><title type="html">Hello Vue.js!</title><link href="https://javascriptvuejs.github.io//2021/01/05/hello.html" rel="alternate" type="text/html" title="Hello Vue.js!" /><published>2021-01-05T00:00:00+09:00</published><updated>2021-01-05T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/05/hello</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/05/hello.html">&lt;h1 id=&quot;뷰-시작하기&quot;&gt;뷰 시작하기&lt;/h1&gt;
-
-&lt;p&gt;뷰는 간단한 CDN 방식으로 제이쿼리(jQuery) 처럼 사용 할 수 있습니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;제이쿼리&lt;/strong&gt;: HTML 문서의 돔 요소에 쉽게 접근하도록 유용한 기능을 제공하는 자바스크립트 라이브러리&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;뷰를 CDN 방식으로 적용하여 ‘Hello Vue.js!’ 를 출력하는 예제를 만들어보겠습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;hello-vuejs-출력하기&quot;&gt;Hello Vue.js 출력하기&lt;/h2&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Vue Sample&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            {{ message }}
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello Vue.js!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 코드는 HTML 기본 구조에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 태그를 하나 추가하고, 뷰 코어 라이브러리를 로딩한 후 뷰로 Hello Vue.js!라는 간단한 메시지를 출력하는 코드입니다.&lt;/p&gt;
-
-&lt;p&gt;먼저 자바스크립트 코드 작성 전에 CDN 방식으로 뷰 코어 라이브러리를 로딩합니다.&lt;/p&gt;
-
-&lt;p&gt;자바스크립트 코드에서 new Vue 구문으로 인스턴스를 생성합니다. 인스턴스 아이디는 app이며, 데이터 속성으로 키는 message, 값은 ‘Hellow Vue.js!’ 인 객체를 가지고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;HTML 코드의 body 영역에서 아이디가 app를 가진 div를 만들고 그 태그 안에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{{ message }}&lt;/code&gt; 와 같이 작성합니다.&lt;/p&gt;
-
-&lt;p&gt;이렇게 작성하면 뷰는 인스턴스 아이디와 동일한 아이디를 가진 돔(DOM)에 뷰로 작성한 코드인 인스턴스가 적용됩니다. 아이디가 app인 뷰의 인스턴스가 아이디로 app을 가진 div 태그에 적용 되는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;그 다음 데이터 객체의 키와 같은 키가 {{ }} 기호 안에 작성되면 그 키의 값이 로딩됩니다.&lt;/p&gt;
-
-&lt;p&gt;즉, 인스턴스가 적용된 div 태그 안에 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{{ message }}&lt;/code&gt; 에 인스턴스의 데이터 객체에서 키가 message인 프로퍼티(property)의 값을 로딩합니다.&lt;/p&gt;
-
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">뷰 시작하기</summary></entry></feed>
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">뷰 인스턴스의 정의</summary></entry></feed>
