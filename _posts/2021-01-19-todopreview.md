@@ -13,7 +13,7 @@ title: 할 일 관리 애플리케이션 듀토리얼(1/6) - 살펴보기
 
 # 할 일 관리 애플리케이션 살펴보기
 
-![todopreview](/images/todopreview.png)
+![todopreview](/images/todopreview.PNG)
 
 맨 위의 할 일 입력 창에 할 일을 입력하고 + 버튼을 누르거나 엔터를 누르면 할 일이 아래의 할 일 목록에 추가됩니다. 그리고 할 일 목록의 각 열에서 쓰레기통 버튼을 누르면 해당 열이 삭제되고, 맨 아래에 [Clear All] 버튼을 누르면 모든 할 일이 삭제되는 웹 애플리케이션입니다.
 
@@ -21,7 +21,7 @@ title: 할 일 관리 애플리케이션 듀토리얼(1/6) - 살펴보기
 
 ## 로컬 스토리지에 저장된 키 : 값 형태의 데이터
 
-![todolocalstorage](/images/todolocalstorage.png)
+![todolocalstorage](/images/todolocalstorage.PNG)
 
 ***
 
