@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://javascriptvuejs.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://javascriptvuejs.github.io//" rel="alternate" type="text/html" /><updated>2021-01-18T13:38:39+09:00</updated><id>https://javascriptvuejs.github.io//feed.xml</id><title type="html">Web Developer from Vue.js</title><subtitle>Vue.js 프레임워크 기술을 포스팅합니다. HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.</subtitle><entry><title type="html">깃허브 백업</title><link href="https://javascriptvuejs.github.io//2021/01/18/github.html" rel="alternate" type="text/html" title="깃허브 백업" /><published>2021-01-18T00:00:00+09:00</published><updated>2021-01-18T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/18/github</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/18/github.html">&lt;h1 id=&quot;원격저장소&quot;&gt;원격저장소&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://javascriptvuejs.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://javascriptvuejs.github.io//" rel="alternate" type="text/html" /><updated>2021-01-19T10:57:54+09:00</updated><id>https://javascriptvuejs.github.io//feed.xml</id><title type="html">Web Developer from Vue.js</title><subtitle>Vue.js 프레임워크 기술을 포스팅합니다. HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.</subtitle><entry><title type="html">깃허브 백업</title><link href="https://javascriptvuejs.github.io//2021/01/19/github.html" rel="alternate" type="text/html" title="깃허브 백업" /><published>2021-01-19T00:00:00+09:00</published><updated>2021-01-19T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/19/github</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/19/github.html">&lt;h1 id=&quot;원격저장소&quot;&gt;원격저장소&lt;/h1&gt;
 
 &lt;p&gt;깃에서는 지역 저장소와 원격 저장소(remote repository)를 연결하여 버전 관리하는 파일들을 쉽게 백업할 수 있습니다. 원격 저장소는 지역 저장소가 아닌 컴퓨터나 서버에 만든 저장소를 말합니다.&lt;/p&gt;
 
@@ -72,7 +72,37 @@
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull origin master&lt;/code&gt;&lt;/p&gt;
 
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">원격저장소</summary></entry><entry><title type="html">뷰 프로젝트 구성</title><link href="https://javascriptvuejs.github.io//2021/01/16/project.html" rel="alternate" type="text/html" title="뷰 프로젝트 구성" /><published>2021-01-16T00:00:00+09:00</published><updated>2021-01-16T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/16/project</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/16/project.html">&lt;h1 id=&quot;html-파일에서-뷰-코드-작성-시-한계점&quot;&gt;HTML 파일에서 뷰 코드 작성 시 한계점&lt;/h1&gt;
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">원격저장소</summary></entry><entry><title type="html">할 일 관리 애플리케이션 듀토리얼(1/6) - 살펴보기</title><link href="https://javascriptvuejs.github.io//2021/01/19/todopreview.html" rel="alternate" type="text/html" title="할 일 관리 애플리케이션 듀토리얼(1/6) - 살펴보기" /><published>2021-01-19T00:00:00+09:00</published><updated>2021-01-19T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/19/todopreview</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/19/todopreview.html">&lt;h1 id=&quot;할-일-관리-애플리케이션&quot;&gt;할 일 관리 애플리케이션&lt;/h1&gt;
+
+&lt;p&gt;프런트엔드 프레임워크를 배울 때 할 일 관리 애플리케이션은 꼭 구현해 봐야 합니다. 실무에서 서비스를 만들 때 사용하는 데이터 조작 방법(삽입, 조회, 변경, 삭제)을 구현해 볼 수 있기 때문입니다. 기업의 실제 서비스는 데이터 조작 방법 4가지에서 크게 벗어나지 않고 화면을 더 추가하는 방식으로 개발됩니다.&lt;/p&gt;
+
+&lt;p&gt;또한 할 일 관리 애플리케이션은 뷰 애플리케이션을 제작할 때 반드시 알아야 할 컴포넌트 구조화와 컴포넌트 통신을 구현해 볼 수 있습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;할-일-관리-애플리케이션-살펴보기&quot;&gt;할 일 관리 애플리케이션 살펴보기&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todopreview.png&quot; alt=&quot;todopreview&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;맨 위의 할 일 입력 창에 할 일을 입력하고 + 버튼을 누르거나 엔터를 누르면 할 일이 아래의 할 일 목록에 추가됩니다. 그리고 할 일 목록의 각 열에서 쓰레기통 버튼을 누르면 해당 열이 삭제되고, 맨 아래에 [Clear All] 버튼을 누르면 모든 할 일이 삭제되는 웹 애플리케이션입니다.&lt;/p&gt;
+
+&lt;p&gt;여기서 추가된 할 일 텍스트 데이터는 모두 브라우저 저장소인 로컬 스토리지(Local Storage)에 저장됩니다. 브라우저 저장소를 사용하여 서버와 데이터베이스를 별도로 구성하지 않고 간단하게 데이터를 저장하고, 삭제할 수 있도록 구현하겠습니다. 저장된 데이터의 형식은 키(key) : 값(value)입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;로컬-스토리지에-저장된-키--값-형태의-데이터&quot;&gt;로컬 스토리지에 저장된 키 : 값 형태의 데이터&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todolocalstorage.png&quot; alt=&quot;todolocalstorage&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;애플리케이션-컴포넌트-구조&quot;&gt;애플리케이션 컴포넌트 구조&lt;/h1&gt;
+
+&lt;p&gt;할 일 관리 애플리케이션은 총 4개의 컴포넌트로 구조화됩니다. 1개의 페이지를 4개의 컴포넌트로 나누는 이유는 재사용성을 높이기 위해서입니다. 화면 1개를 큰 컴포넌트 1개로 놓고 페이지를 제작하는 방식보다 인풋 박스, 목록, 버튼 등의 작은 역할 단위로 컴포넌트로 관리하는 것이 다른 페이지에서 해당 코드를 재사용하기 수월하기 때문입니다. 이러한 이유로 컴포넌트 기반 프레임워크에서는 컴포넌트의 단위를 작게 설계하도록 권하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;그리고 화면 1개를 여러 컴포넌트로 구조화할 때는 각 컴포넌트 간에 자유롭게 데이터를 전달할 수 있어 반응성이 더 좋은 뷰 애플리케이션을 제작할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;여기서는 제목인 Header 영역, 리스트를 등록하는 Input 영역, 리스트를 보여주는 List 영역, 리스트를 전체 삭제하는 Footer 영역으로 구조화하겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">할 일 관리 애플리케이션</summary></entry><entry><title type="html">뷰 프로젝트 구성</title><link href="https://javascriptvuejs.github.io//2021/01/16/project.html" rel="alternate" type="text/html" title="뷰 프로젝트 구성" /><published>2021-01-16T00:00:00+09:00</published><updated>2021-01-16T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/16/project</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/16/project.html">&lt;h1 id=&quot;html-파일에서-뷰-코드-작성-시-한계점&quot;&gt;HTML 파일에서 뷰 코드 작성 시 한계점&lt;/h1&gt;
 
 &lt;p&gt;실제로 뷰 애플리케이션을 제작하다 보면 다음과 같은 상황에서 파일 구조에 한계점을 느끼게 됩니다.&lt;/p&gt;
 
@@ -1941,68 +1971,4 @@ methods: {
 
 &lt;p&gt;즉, 인스턴스가 적용된 div 태그 안에 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{{ message }}&lt;/code&gt; 에 인스턴스의 데이터 객체에서 키가 message인 프로퍼티(property)의 값을 로딩합니다.&lt;/p&gt;
 
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">뷰 시작하기</summary></entry><entry><title type="html">Vue.js의 특징</title><link href="https://javascriptvuejs.github.io//2021/01/04/mvvm.html" rel="alternate" type="text/html" title="Vue.js의 특징" /><published>2021-01-04T00:00:00+09:00</published><updated>2021-01-04T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/04/mvvm</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/04/mvvm.html">&lt;h1 id=&quot;ui-라이브러리&quot;&gt;UI 라이브러리&lt;/h1&gt;
-
-&lt;p&gt;뷰(Vue.js)의 &lt;a href=&quot;/vuejs/&quot;&gt;코어 라이브러리&lt;/a&gt;는 웹 UI 개발 방법 중 하나인 MVVM 패턴의 뷰 모델(ViewModel)에 해당하는 UI 라이브러리입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/mvvm.png&quot; alt=&quot;mvvm&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;MVVM 패턴이란 화면을 모델(Model) - 뷰(View) - 뷰 모델(View Model)로 구조화하여 개발하는 방식을 말합니다. 이러한 방식으로 개발하는 이유는 화면의 요소들을 제어하는 로직와 데이터 제어 로직을 분리하여 코드를 더 직관적으로 이해할 수 있고, 추후 유지 보수가 편해지기 때문입니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;뷰(View)&lt;/strong&gt;: 사용자에게 보이는 화면&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;돔(DOM)&lt;/strong&gt;: HTML 문서에 들어가는 요소(태그, 클래스, 속성 등)의 정보를 담고 있는 데이터 트리&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;돔 리스너(DOM Listener)&lt;/strong&gt;: 돔의 변경 내역에 대해 즉각적으로 반응하여 특정 로직을 수행하는 장치&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;모델(Model)&lt;/strong&gt;: 데이터를 담는 용기, 보통은 서버에서 가져온 데이터를 자바스크립트 객체 형태로 저장&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;데이터 바인딩(Data Binding)&lt;/strong&gt;: 뷰(View)에 표시되는 내용과 모델의 데이터를 동기화&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;뷰 모델(ViewModel)&lt;/strong&gt;: 뷰와 모델의 중간 영역, 돔 리스너와 데이터 바인딩을 제공하는 영역&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;mvvm-구조의-처리-흐름&quot;&gt;MVVM 구조의 처리 흐름&lt;/h2&gt;
-
-&lt;p&gt;뷰는 화면의 요소가 변경되거나 조작이 일어날 때 즉각적으로 반응하여 화면의 데이터를 갱신하여 보여 주는 역할을 합니다. 즉, 화면의 표현에 주로 관여하는 라이브러리입니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;mvvm-패턴이란&quot;&gt;MVVM 패턴이란?&lt;/h3&gt;
-
-&lt;p&gt;위키피디아에서는 MVVM 패턴을 아래와 같이 정의 합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;“마크업 언어나 GUI 코드를 비즈니스 로직 또는 백엔드 로직과 분리하여 개발하는 소프트웨어 디자인 패턴”&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;로직&lt;/strong&gt;: 특정 기능을 구현하기 위한 처리 흐름&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;이말을 바꿔 해석해보면 “프론트엔드의 화면 동작과 관련된 로직과 벡엔드의 데이터베이스 처리 로직을 분리하여 더 깔끔하게 코드를 구성한다.” 라고 할 수 있겠습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;컴포넌트-기반-프레임워크&quot;&gt;컴포넌트 기반 프레임워크&lt;/h1&gt;
-
-&lt;p&gt;뷰가 가지는 또 하나의 큰 특징은 컴포넌트(Component)기반 프레임워크라는 점입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/component.png&quot; alt=&quot;component&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;컴포넌트란 마치 레고 블럭과 같습니다. 레고 블럭을 잘 조합해서 쌓으면 여러가지 원하는 모형을 만들 수 있고 필요할 때 마다 만들어 놓은 레고 블럭들 끼리 조합 할 수 있듯이 뷰의 컴포넌트를 조합하여 화면을 구성할 수 있습니다. 위 그림의 왼쪽 화면은 각 영역을 컴포넌트로 지정하여 구분한 것이고, 오른쪽 그림은 왼쪽 화면의 각 컴포넌트 간의 관계를 나타낸 것입니다.&lt;/p&gt;
-
-&lt;p&gt;컴포넌트 기반 방식으로 개발하는 이유는 이와 같이 각 영역을 구분지어 관계를 형성해 놓으면 코드를 재사용하기 쉽기 때문입니다. 따라서 프레임워크 자체에서 컴포넌트 방식을 추구하면 모두가 정해진 방식대로 컴포넌트를 활용할 수 있으므로 빠르게 개발할 수 있을 뿐만 아니라 다른 개발자가 작성한 코드를 볼 때도 수월합니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;장점을-가진-프레임워크&quot;&gt;장점을 가진 프레임워크&lt;/h1&gt;
-
-&lt;p&gt;뷰는 양방향 데이터 바인딩(Two-way Data Binding)과 단방향 데이터 흐름(One-way Data Flow)의 장접을 모두 결합한 프레임워크입니다. 양방향 데이터 바인딩이란 화면에 표시되는 값과 프레임워크의 모델 데이터 값이 동기화되어 한쪽이 변경되면 다른 한쪽도 자동으로 변경되는 것을 말합니다. 단방향 데이터 흐름은 컴포넌트의 단방향 통신을 의미합니다. 컴포넌트 간에 데이터를 전달할 때 항상 상위 컴포넌트에서 하위 컴포넌트 한 방향으로만 전달하게끔 프레임워크가 구조화되어 있는 게 단방향 데이터 흐름입니다.&lt;/p&gt;
-
-&lt;p&gt;빠른 화면 랜더링(Rendering)을 위해 가상 돔(Virtual DOM) 랜더링 방식을 적용하여 사용자 인터랙션(User Interaction)에 적합한 동작 구조를 갖추고 있습니다. 가상 돔을 활용하면 특정 돔 요소를 추가하거나 삭제하는 변경이 일어날 때 화면 전체를 다시 랜더링 하지 않고 프레임워크에서 정의한 방식에 따라 화면을 갱신합니다. 따라서 브라우저 입장에서는 성능 부하가 줄어들어 일반 랜더링 방식보다 더 빠르게 화면을 랜더링할 수 있습니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;랜더링&lt;/strong&gt;: 브라우저에 웹 페이지를 그려내는 동작&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">UI 라이브러리</summary></entry></feed>
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">뷰 시작하기</summary></entry></feed>

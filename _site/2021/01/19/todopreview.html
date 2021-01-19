@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>할 일 관리 애플리케이션 듀토리얼(1/6) - 살펴보기 | Web Developer from Vue.js</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="할 일 관리 애플리케이션 듀토리얼(1/6) - 살펴보기" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="할 일 관리 애플리케이션" />
+<meta property="og:description" content="할 일 관리 애플리케이션" />
+<link rel="canonical" href="https://javascriptvuejs.github.io//2021/01/19/todopreview.html" />
+<meta property="og:url" content="https://javascriptvuejs.github.io//2021/01/19/todopreview.html" />
+<meta property="og:site_name" content="Web Developer from Vue.js" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-19T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="할 일 관리 애플리케이션 듀토리얼(1/6) - 살펴보기" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"할 일 관리 애플리케이션 듀토리얼(1/6) - 살펴보기","dateModified":"2021-01-19T00:00:00+09:00","datePublished":"2021-01-19T00:00:00+09:00","url":"https://javascriptvuejs.github.io//2021/01/19/todopreview.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://javascriptvuejs.github.io//2021/01/19/todopreview.html"},"description":"할 일 관리 애플리케이션","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://javascriptvuejs.github.io//feed.xml" title="Web Developer from Vue.js" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Web Developer from Vue.js</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">할 일 관리 애플리케이션 듀토리얼(1/6) - 살펴보기</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-01-19T00:00:00+09:00" itemprop="datePublished">Jan 19, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="할-일-관리-애플리케이션">할 일 관리 애플리케이션</h1>
+
+<p>프런트엔드 프레임워크를 배울 때 할 일 관리 애플리케이션은 꼭 구현해 봐야 합니다. 실무에서 서비스를 만들 때 사용하는 데이터 조작 방법(삽입, 조회, 변경, 삭제)을 구현해 볼 수 있기 때문입니다. 기업의 실제 서비스는 데이터 조작 방법 4가지에서 크게 벗어나지 않고 화면을 더 추가하는 방식으로 개발됩니다.</p>
+
+<p>또한 할 일 관리 애플리케이션은 뷰 애플리케이션을 제작할 때 반드시 알아야 할 컴포넌트 구조화와 컴포넌트 통신을 구현해 볼 수 있습니다.</p>
+
+<hr />
+
+<h1 id="할-일-관리-애플리케이션-살펴보기">할 일 관리 애플리케이션 살펴보기</h1>
+
+<p><img src="/images/todopreview.png" alt="todopreview" /></p>
+
+<p>맨 위의 할 일 입력 창에 할 일을 입력하고 + 버튼을 누르거나 엔터를 누르면 할 일이 아래의 할 일 목록에 추가됩니다. 그리고 할 일 목록의 각 열에서 쓰레기통 버튼을 누르면 해당 열이 삭제되고, 맨 아래에 [Clear All] 버튼을 누르면 모든 할 일이 삭제되는 웹 애플리케이션입니다.</p>
+
+<p>여기서 추가된 할 일 텍스트 데이터는 모두 브라우저 저장소인 로컬 스토리지(Local Storage)에 저장됩니다. 브라우저 저장소를 사용하여 서버와 데이터베이스를 별도로 구성하지 않고 간단하게 데이터를 저장하고, 삭제할 수 있도록 구현하겠습니다. 저장된 데이터의 형식은 키(key) : 값(value)입니다.</p>
+
+<h2 id="로컬-스토리지에-저장된-키--값-형태의-데이터">로컬 스토리지에 저장된 키 : 값 형태의 데이터</h2>
+
+<p><img src="/images/todolocalstorage.png" alt="todolocalstorage" /></p>
+
+<hr />
+
+<h1 id="애플리케이션-컴포넌트-구조">애플리케이션 컴포넌트 구조</h1>
+
+<p>할 일 관리 애플리케이션은 총 4개의 컴포넌트로 구조화됩니다. 1개의 페이지를 4개의 컴포넌트로 나누는 이유는 재사용성을 높이기 위해서입니다. 화면 1개를 큰 컴포넌트 1개로 놓고 페이지를 제작하는 방식보다 인풋 박스, 목록, 버튼 등의 작은 역할 단위로 컴포넌트로 관리하는 것이 다른 페이지에서 해당 코드를 재사용하기 수월하기 때문입니다. 이러한 이유로 컴포넌트 기반 프레임워크에서는 컴포넌트의 단위를 작게 설계하도록 권하고 있습니다.</p>
+
+<p>그리고 화면 1개를 여러 컴포넌트로 구조화할 때는 각 컴포넌트 간에 자유롭게 데이터를 전달할 수 있어 반응성이 더 좋은 뷰 애플리케이션을 제작할 수 있습니다.</p>
+
+<p>여기서는 제목인 Header 영역, 리스트를 등록하는 Input 영역, 리스트를 보여주는 List 영역, 리스트를 전체 삭제하는 Footer 영역으로 구조화하겠습니다.</p>
+
+<hr />
+
+  </div><a class="u-url" href="/2021/01/19/todopreview.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Web Developer from Vue.js</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Web Developer from Vue.js</li><li><a class="u-email" href="mailto:javascriptvuejs@gmail.com">javascriptvuejs@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/javascriptvuejs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">javascriptvuejs</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Vue.js 프레임워크 기술을 포스팅합니다. HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
