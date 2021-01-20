@@ -112,7 +112,7 @@ export default {
 
 ### App.vue에 등록한 지역 컴포넌트
 
-```javascript
+```
 <script>
 export default {
     components: {
@@ -135,7 +135,7 @@ App.vue 파일에서 다른 컴포넌트의 내용을 import from 구문으로 �
 
 ### import 구문으로 컴포넌트 내용을 불러와서 등록하는 코드
 
-```javascript
+```
 <script>
 import TodoHeader from './components/TodoHeader.vue'
 import TodoInput from './components/TodoInput.vue'

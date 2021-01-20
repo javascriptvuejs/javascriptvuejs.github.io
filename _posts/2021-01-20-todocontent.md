@@ -170,7 +170,7 @@ export default {
 
 ### localStorage.setItem() 코드
 
-```
+```javascript
 methods: {
     addTodo() {
         localStorage.setItem(this.newTodoItem, this.newTodoItem);
@@ -219,7 +219,7 @@ methods: {
 
 ### TodoInput 컴포넌트의 template 코드
 
-```
+```html
 <template>
     <div class="inputBox shadow">
         <input type="text" v-model="newTodoItem" placeholder="Type what you have to do" v-on:keyup.enter="addTodo">
