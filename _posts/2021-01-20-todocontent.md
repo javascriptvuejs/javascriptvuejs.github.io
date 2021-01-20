@@ -316,7 +316,7 @@ HTML에서 일반적으로 목록 아이템(list item)을 나타낼 떄 사용�
 
 ### `<ul>` 태그와 `<li>` 태그로만 나타낸 할 일 목록
 
-![todolist](/images/todolist.PNG)
+![todolist](/images/todolist.png)
 
 ## 로컬 스토리지 데이터를 뷰 데이터로 저장
 
