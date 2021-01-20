@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://javascriptvuejs.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://javascriptvuejs.github.io//" rel="alternate" type="text/html" /><updated>2021-01-20T11:41:37+09:00</updated><id>https://javascriptvuejs.github.io//feed.xml</id><title type="html">Web Developer from Vue.js</title><subtitle>Vue.js 프레임워크 기술을 포스팅합니다. HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.</subtitle><entry><title type="html">할 일 관리 애플리케이션 튜토리얼(3/6) - 컴포넌트</title><link href="https://javascriptvuejs.github.io//2021/01/20/todocomponent.html" rel="alternate" type="text/html" title="할 일 관리 애플리케이션 튜토리얼(3/6) - 컴포넌트" /><published>2021-01-20T00:00:00+09:00</published><updated>2021-01-20T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/20/todocomponent</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/20/todocomponent.html">&lt;p&gt;프로젝트 초기 구성을 완료하였으니 애플리케이션 구동에 필요한 컴포넌트들을 생성하고 등록합니다. 대상 컴포넌트는 TodoHeader, TodoInput, TodoList, TodoFooter 총 4개입니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://javascriptvuejs.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://javascriptvuejs.github.io//" rel="alternate" type="text/html" /><updated>2021-01-20T16:33:27+09:00</updated><id>https://javascriptvuejs.github.io//feed.xml</id><title type="html">Web Developer from Vue.js</title><subtitle>Vue.js 프레임워크 기술을 포스팅합니다. HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.</subtitle><entry><title type="html">할 일 관리 애플리케이션 튜토리얼(3/6) - 컴포넌트</title><link href="https://javascriptvuejs.github.io//2021/01/20/todocomponent.html" rel="alternate" type="text/html" title="할 일 관리 애플리케이션 튜토리얼(3/6) - 컴포넌트" /><published>2021-01-20T00:00:00+09:00</published><updated>2021-01-20T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/20/todocomponent</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/20/todocomponent.html">&lt;p&gt;프로젝트 초기 구성을 완료하였으니 애플리케이션 구동에 필요한 컴포넌트들을 생성하고 등록합니다. 대상 컴포넌트는 TodoHeader, TodoInput, TodoList, TodoFooter 총 4개입니다.&lt;/p&gt;
 
 &lt;h1 id=&quot;컴포넌트-생성&quot;&gt;컴포넌트 생성&lt;/h1&gt;
 
@@ -102,17 +102,17 @@ export default {
 
 &lt;h3 id=&quot;appvue에-등록한-지역-컴포넌트&quot;&gt;App.vue에 등록한 지역 컴포넌트&lt;/h3&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
-export default {
-    components: {
-        'TodoHeader': TodoHeader,
-        'TodoInput': TodoInput,
-        'TodoList': TodoList,
-        'TodoFooter': TodoFooter
-    }
-}
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;TodoHeader&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TodoHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;TodoInput&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TodoInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;TodoList&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TodoList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;TodoFooter&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TodoFooter&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;싱글 파일 컴포넌트 체계(.vue 파일 체계)에서는 특정 컴포넌트에서 다른 위치에 있는 컴포넌트의 내용을 불러올 때 아래 형식을 사용합니다.&lt;/p&gt;
 
@@ -124,27 +124,27 @@ export default {
 
 &lt;h3 id=&quot;import-구문으로-컴포넌트-내용을-불러와서-등록하는-코드&quot;&gt;import 구문으로 컴포넌트 내용을 불러와서 등록하는 코드&lt;/h3&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script&amp;gt;
-import TodoHeader from './components/TodoHeader.vue'
-import TodoInput from './components/TodoInput.vue'
-import TodoList from './components/TodoList.vue'
-import TodoFooter from './components/TodoFooter.vue'
-...
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TodoHeader&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./components/TodoHeader.vue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TodoInput&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./components/TodoInput.vue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TodoList&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./components/TodoList.vue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TodoFooter&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./components/TodoFooter.vue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;컴포넌트 등록을 완료하였으니 컴포넌트 태그 4개를 App.vue의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div id=&quot;app&quot;&amp;gt;&lt;/code&gt; 태그 안에 추가합니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;등록한-컴포넌트-4개를-html에-표시&quot;&gt;등록한 컴포넌트 4개를 HTML에 표시&lt;/h3&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
-    &amp;lt;div id=&quot;app&quot;&amp;gt;
-        &amp;lt;TodoHeader&amp;gt;&amp;lt;/TodoHeader&amp;gt;
-        &amp;lt;TodoInput&amp;gt;&amp;lt;/TodoInput&amp;gt;
-        &amp;lt;TodoList&amp;gt;&amp;lt;/TodoList&amp;gt;
-        &amp;lt;TodoFooter&amp;gt;&amp;lt;/TodoFooter&amp;gt;
-    &amp;lt;/div&amp;gt;
-&amp;lt;/template&amp;gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;template&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;TodoHeader&amp;gt;&amp;lt;/TodoHeader&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;TodoInput&amp;gt;&amp;lt;/TodoInput&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;TodoList&amp;gt;&amp;lt;/TodoList&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;TodoFooter&amp;gt;&amp;lt;/TodoFooter&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/template&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;명령 프롬프트에서 npm run dev를 이용해 서버를 실행키시면 아래와 같은 화면이 나옵니다. 만약 이미 서버가 실행 중이라면 변경된 코드를 저장했을 때 자동으로 화면이 새로 고침됩니다.&lt;/p&gt;
@@ -199,7 +199,570 @@ import TodoFooter from './components/TodoFooter.vue'
 
 &lt;p&gt;여기서는 제목인 Header 영역, 리스트를 등록하는 Input 영역, 리스트를 보여주는 List 영역, 리스트를 전체 삭제하는 Footer 영역으로 구조화하겠습니다.&lt;/p&gt;
 
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">할 일 관리 애플리케이션</summary></entry><entry><title type="html">깃허브 백업</title><link href="https://javascriptvuejs.github.io//2021/01/19/github.html" rel="alternate" type="text/html" title="깃허브 백업" /><published>2021-01-19T00:00:00+09:00</published><updated>2021-01-19T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/19/github</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/19/github.html">&lt;h1 id=&quot;원격저장소&quot;&gt;원격저장소&lt;/h1&gt;
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">할 일 관리 애플리케이션</summary></entry><entry><title type="html">할 일 관리 애플리케이션 튜토리얼(4/6) - 내용 구현</title><link href="https://javascriptvuejs.github.io//2021/01/20/todocontent.html" rel="alternate" type="text/html" title="할 일 관리 애플리케이션 튜토리얼(4/6) - 내용 구현" /><published>2021-01-20T00:00:00+09:00</published><updated>2021-01-20T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/20/todocontent</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/20/todocontent.html">&lt;p&gt;각 컴포넌트 역할에 맞춰 컴포넌트 기능을 구현해 보겠습니다. 컴포넌트별로 구현할 기능은 아래와 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TodoHeader: 애플리케이션 이름 표시&lt;/li&gt;
+  &lt;li&gt;TodoInput: 할 일 입력 및 추가&lt;/li&gt;
+  &lt;li&gt;TodoList: 할 일 목록 표시 및 특정 할 일 삭제&lt;/li&gt;
+  &lt;li&gt;TodoFooter: 할 일 모두 삭제&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;애플리케이션-제목을-보여주는-todoheader-컴포넌트&quot;&gt;애플리케이션 제목을 보여주는 TodoHeader 컴포넌트&lt;/h1&gt;
+
+&lt;h2 id=&quot;애플리케이션-제목-추가&quot;&gt;애플리케이션 제목 추가&lt;/h2&gt;
+
+&lt;p&gt;어떤 애플리케이션인지 파악하기 쉽게 애플리케이션 제목을 추가하겠습니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 태그를 삭제하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;header&amp;gt;&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; 태그를 활용하여 아래처럼 제목을 표시합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;todoheader-컴포넌트의-template-내용&quot;&gt;TodoHeader 컴포넌트의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;template&amp;gt;&lt;/code&gt; 내용&lt;/h3&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;template&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;TODO it!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/template&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;css로-제목-꾸미기&quot;&gt;CSS로 제목 꾸미기&lt;/h2&gt;
+
+&lt;p&gt;제목 스타일링을 위해 최상위 컴포넌트의 App.vue와 TodoHeader.vue에 다음과 같이 CSS를 추가합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;appvue의-css-스타일&quot;&gt;App.vue의 CSS 스타일&lt;/h3&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#F6F6F8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;border-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;groove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;border-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;groove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.shadow&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;box-shadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.03&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;todoheadervue의-css-스타일&quot;&gt;TodoHeader.vue의 CSS 스타일&lt;/h3&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;scoped&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#2F3B52&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;900&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2.5rem&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1.5rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;App.vue와 TodoHeader.vue에 추가한 스타일의 역할은 각각 다음과 같습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;background-color&lt;/strong&gt;: 애플리케이션 전체의 배경 색을 꾸미기 위해 지정&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;text-align&lt;/strong&gt;: 애플리케이션 전체에서 사용하는 텍스트의 정렬 방식을 선택&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;border-style&lt;/strong&gt;: 할 일을 입력하는 인풋 박스의 테두리 모양을 정의&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;box-shadow&lt;/strong&gt;: 할 일을 입력하는 인풋 박스와 할 일 아이템의 아래 그림자 정의&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;color&lt;/strong&gt;: 애플리케이션 제목의 텍스트 색깔을 지정&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;font-weight&lt;/strong&gt;: 애플리케이션 제목의 텍스트 굵기를 지정&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;margin&lt;/strong&gt;: 애플리케이션 제목의 텍스트 여백을 지정&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;style&amp;gt;&lt;/code&gt; 태그에 사용된 scoped는 뷰에서 지원하는 속성이며, 스타일 정의를 해당 컴포넌트에만 적용하겠다는 의미입니다.&lt;/p&gt;
+
+&lt;p&gt;앞 코그의 실행 결과는 아래와 같습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;todoheader-컴포넌트-등록-결과&quot;&gt;TodoHeader 컴포넌트 등록 결과&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todoheader.PNG&quot; alt=&quot;todoheader&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;할-일을-입력하는-todoinput-컴포넌트&quot;&gt;할 일을 입력하는 TodoInput 컴포넌트&lt;/h1&gt;
+
+&lt;h2 id=&quot;인풋-박스와-버튼-추가&quot;&gt;인풋 박스와 버튼 추가&lt;/h2&gt;
+
+&lt;p&gt;텍스트 값을 입력받기 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;input&amp;gt;&lt;/code&gt; 태그와 텍스트 값을 저장하기 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;button&amp;gt;&lt;/code&gt; 태그를 추가합니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;button&amp;gt;&lt;/code&gt; 태그의 이름은 “추가”로 지정합니다. 태그를 추가하면 화면에서 input 텍스트가 있던 자리에 인풋 박스와 버튼이 생깁니다. 인풋 박스에 텍스트를 입력했을 때 뷰 인스턴스에서 텍스트 값을 인식할 수 있게 v-model 디렉티브와 데이터 속성 newTodoItem을 다음과 같이 추가합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;인풋-박스에-v-model-디렉티브와-data-속성을-추가한-todoinput-컴포넌트-코드&quot;&gt;인풋 박스에 v-model 디렉티브와 data 속성을 추가한 TodoInput 컴포넌트 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+    &amp;lt;div&amp;gt;
+        &amp;lt;input type=&quot;text&quot; v-model=&quot;newTodoItem&quot;&amp;gt;
+        &amp;lt;button&amp;gt;추가&amp;lt;/button&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+export default {
+    data() {
+        return {
+            newTodoItem: ''
+        }
+    }
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 코드를 실행한 후 뷰 개발자 도구를 엽니다. 뷰 개발자 도구에서 “components” 탭의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;app&amp;gt;&lt;/code&gt; 아래 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;TodoInput&amp;gt;&lt;/code&gt; 부분을 클릭하면 newTodoItem의 값이 ““로 되어 있습니다. 인풋 박스에 Hello라는 텍스트를 입력하면서 newTodoItem의 값을 지켜보면 텍스트를 입력함에 따라 newTodoItem의 값도 갱신되는 것을 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;인풋-박스의-입력-값에-따라-갱신되는-newtodoitem-데이터&quot;&gt;인풋 박스의 입력 값에 따라 갱신되는 newTodoItem 데이터&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todoinput.PNG&quot; alt=&quot;todoinput&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;텍스트를-저장하기-위한-버튼-이벤트&quot;&gt;텍스트를 저장하기 위한 버튼 이벤트&lt;/h2&gt;
+
+&lt;p&gt;뷰에서 인식한 인풋 박스에 입력된 텍스트 값을 데이터 저장소인 로컬 스토리지에 저장하겠습니다. [추가] 버튼을 클릭했을 때 특정 동작을 수행할 수 있게 v-on:click에 버튼 이벤트 addTodo를 지정합니다. 버튼 이벤트 addTodo()의 로직은 methods에 정의합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;버튼-클릭-이벤트-addtodo를-추가한-코드&quot;&gt;버튼 클릭 이벤트 addTodo를 추가한 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+    &amp;lt;div&amp;gt;
+        &amp;lt;input type=&quot;text&quot; v-model=&quot;newTodoItem&quot;&amp;gt;
+        &amp;lt;button v-on:click=&quot;addTodo&quot;&amp;gt;추가&amp;lt;/button&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+export default {
+    data() {
+        return {
+            newTodoItem: ''
+        }
+    },
+    methods: {
+        addTodo() {
+            console.log(this.newTodoItem);
+        }
+    }
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;버튼이 정상적을 동작하는지 확인하기 위해 인풋 박스에 입력된 텍스트 데이터(newTodoItem)를 console.log()로 출력해 보겠습니다. 인풋 박스에 Do it을 입력하고 [추가] 버튼을 클릭하면 다음과 같이 콘솔에 텍스트 값이 표시됩니다.&lt;/p&gt;
+
+&lt;p&gt;여기서 this.newTodoItem의 this는 해당 컴포넌트를 가리킵니다. 즉, 여기서는 인스턴스 자체로 컴포넌트인 TodoInput.vue를 가리킵니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;콘솔-로그로-입력된-텍스트를-출력한-화면&quot;&gt;콘솔 로그로 입력된 텍스트를 출력한 화면&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todoconsole.PNG&quot; alt=&quot;todoconsole&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;입력받은-텍스트를-로컬-스토리지에-저장&quot;&gt;입력받은 텍스트를 로컬 스토리지에 저장&lt;/h2&gt;
+
+&lt;p&gt;버튼 이벤트가 제대로 동작하는 것을 확인했으니 입력받은 텍스트를 로컬 스토리지의 setItem() API를 이용하여 저장합니다. setItem()는 로컬 스토리지에 데이터를 추가하는 API입니다. API 형식은 키, 값 형태입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;localstoragesetitem-코드&quot;&gt;localStorage.setItem() 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;methods: {
+    addTodo() {
+        localStorage.setItem(this.newTodoItem, this.newTodoItem);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;methods의 내용을 위와 같이 변경합니다. 인풋 박스에 Do it을 입력하고 [추가] 버튼을 클릭하면 로컬 스토리지에 텍스트 값이 저장됩니다. 로컬 스토리지에 저장된 것을 확인하려면 크롬 개발자 도구의 [Application -&amp;gt; Local Storage -&amp;gt; http://localhost:8080]를 클릭해 확인합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;로컬-스토리지에-인풋-박스의-텍스트를-저장한-화면&quot;&gt;로컬 스토리지에 인풋 박스의 텍스트를 저장한 화면&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todosetitem.PNG&quot; alt=&quot;todosetitem&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;addtodo-안에-예외-처리-코드-넣기&quot;&gt;addTodo() 안에 예외 처리 코드 넣기&lt;/h2&gt;
+
+&lt;p&gt;인풋 박스에 입력된 텍스트가 없을 경우 로컬 스토리지에 데이터가 저장되지 않게 예외 처리 코드를 추가하겠습니다. 기존의 addTodo() 메서드를 아래와 같이 변경합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;addtodo와-clearinput-코드&quot;&gt;addTodo()와 clearInput() 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;addTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newTodoItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newTodoItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newTodoItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clearInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;clearInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newTodoItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;변경 전의 addTodo()는 만약 인풋 박스에 텍스트를 입력하지 않은 상태에서 [추가] 버튼을 클릭하면 빈 데이터가 로컬 스토리지에 저장되는 문제가 있었습니다. 하지만 위와 같이 예외 처리를 함으로써 빈 데이터나 공백 문자열은 저장되지 않습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;디자인-패턴-단일-책임-원칙&quot;&gt;디자인 패턴: 단일 책임 원칙&lt;/h3&gt;
+
+&lt;p&gt;단일 책임 원칙(Single Responsibility Principle)이란 함수가 하나의 기능만 담당하도록 설계하는 객체 지향 프로그래밍의 디자인 패턴입니다. clearInput()의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this.newTodoItem = '';&lt;/code&gt; 코드를 addTodo() 메서드에 넣어도 되지만 단일 책임 원칙에 따라 할 일 텍스트를 저장하는 코드는 addTodo()에 넣고, 인풋 박스의 내용을 비우는 코드는 clearInput()에 넣습니다. 다른 메서드에서 인풋 박스의 내용을 비우는 코드가 필요할 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this.newTodoItem = '';&lt;/code&gt; 코드 대신 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this.clearInput()&lt;/code&gt; 을 호출하면 됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;아이콘-이용한-직관적인-버튼-모양&quot;&gt;아이콘 이용한 직관적인 버튼 모양&lt;/h2&gt;
+
+&lt;p&gt;현재 버튼은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;button&amp;gt;&lt;/code&gt; 태그와 “추가”라는 텍스트를 사용하고 있습니다. 앞에서 설치한 어썸 아이콘의 + 아이콘을 이용해서 더 직관적인 버튼 모양을 만들겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;template&amp;gt;&lt;/code&gt; 태그에 기존 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;button&amp;gt;&lt;/code&gt; 태그를 삭제하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;span&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;i&amp;gt;&lt;/code&gt; 태그를 아래와 같이 추가합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;todoinput-컴포넌트의-template-코드&quot;&gt;TodoInput 컴포넌트의 template 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+    &amp;lt;div class=&quot;inputBox shadow&quot;&amp;gt;
+        &amp;lt;input type=&quot;text&quot; v-model=&quot;newTodoItem&quot; placeholder=&quot;Type what you have to do&quot; v-on:keyup.enter=&quot;addTodo&quot;&amp;gt;
+        &amp;lt;span class=&quot;addContainer&quot; v-on:click=&quot;addTodo&quot;&amp;gt;
+            &amp;lt;i class=&quot;addBtn fas fa-plus&quot; aria-hidden=&quot;true&quot;&amp;gt;&amp;lt;/i&amp;gt;
+        &amp;lt;/span&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;template&amp;gt;&lt;/code&gt; 변경 내용은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;placeholder: 인풋 박스의 힌트 속성&lt;/li&gt;
+  &lt;li&gt;v-on:keyup.enter: 인풋 박스에서 엔터를 눌렀을 때 동작하는 속성&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;span&amp;gt;&lt;/code&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;button&amp;gt;&lt;/code&gt; 대신 클릭 이벤트를 받을 태그&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;i class=&quot;fa fa-plus&quot;&amp;gt;&lt;/code&gt; : 어썸 아이콘의 + 아이콘을 추가&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;todoinput-컴포넌트의-css-코드&quot;&gt;TodoInput 컴포넌트의 CSS 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;scoped&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:focus&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;outline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.inputBox&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.inputBox&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;border-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.9rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.addContainer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linear-gradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#6478FB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#8763FB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.addBtn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;vertical-align&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;middle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;style&amp;gt;&lt;/code&gt; 변경 내용은 다음과 같습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;outline&lt;/strong&gt;: 할 일을 입력하는 인풋 박스의 선 스타일 지정&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;background&lt;/strong&gt;: 인풋 박스의 배경색 지정&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;height&lt;/strong&gt;: 인풋 박스의 높이 설정&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;line-height&lt;/strong&gt;: 인풋 박스에 입력되는 텍스트의 중앙 정렬을 위해 설정&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;border-radius&lt;/strong&gt;: 인풋 박스의 둥근 테두리 속성 설정&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;float&lt;/strong&gt;: 할 일 추가 버튼이 표시될 위치 정의&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;vertical-align&lt;/strong&gt;: 할 일 추가 아이콘의 수직 정렬 정의&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;todoinput-컴포넌트의-css-스타일링이-완료된-화면&quot;&gt;TodoInput 컴포넌트의 CSS 스타일링이 완료된 화면&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todoinputcss.PNG&quot; alt=&quot;todoinputcss&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;저장된-할-일-목록을-표시하는-todolist-컴포넌트&quot;&gt;저장된 할 일 목록을 표시하는 TodoList 컴포넌트&lt;/h1&gt;
+
+&lt;h2 id=&quot;할-일-목록-만들기&quot;&gt;할 일 목록 만들기&lt;/h2&gt;
+
+&lt;p&gt;HTML에서 일반적으로 목록 아이템(list item)을 나타낼 떄 사용하는 기본 태그는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;ul&amp;gt;&lt;/code&gt;입니다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; 태그 안에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&lt;/code&gt; 태그를 추가하면 추가한 숫자만큼 목록에 아이템이 추가됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;목록을-나타내는-ul-코드&quot;&gt;목록을 나타내는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;template&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;할 일 1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;할 일 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;할 일 3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/template&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;ul-태그와-li-태그로만-나타낸-할-일-목록&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; 태그와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&lt;/code&gt; 태그로만 나타낸 할 일 목록&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todolist.PNG&quot; alt=&quot;todolist&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;로컬-스토리지-데이터를-뷰-데이터로-저장&quot;&gt;로컬 스토리지 데이터를 뷰 데이터로 저장&lt;/h2&gt;
+
+&lt;p&gt;로컬 스토리지의 데이터를 담을 todoItems 데이터 속성을 빈 배열로 선언합니다. 그리고 created() 라이프 사이클 훅에 for 반복문과 push()로 로컬 스토리지의 모든 데이터를 todoItems에 담는 로직을 추가합니다. push()는 배열의 끝 요소에 배열 아이템을 하나씩 추가하는 자바스크립트 내장 API입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;로컬-스토리지-데이터를-뷰-데이터에-저장하는-코드&quot;&gt;로컬 스토리지 데이터를 뷰 데이터에 저장하는 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;todoItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;created&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todoItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;keu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;뷰-데이터의-아이템-개수만큼-화면에-표시&quot;&gt;뷰 데이터의 아이템 개수만큼 화면에 표시&lt;/h2&gt;
+
+&lt;p&gt;아래와 같이 v-for 디렉티브로 구현합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;v-for-디렉티브를-이용한-할-일-목록-랜더링&quot;&gt;v-for 디렉티브를 이용한 할 일 목록 랜더링&lt;/h3&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;template&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;v-for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;todoItem in todoItems&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;todoItem&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ todoItem }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/template&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;여기서 v-for 디렉티브는 뷰 데이터 속성 todoItems의 내용물 개수만큼 반복해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&lt;/code&gt; 태그를 출력하는 디렉티브입니다. todoItems의 타입은 배열이기 때문에 배열의 요소 숫자만큼 반복해서 아래와 같이 출력합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;로컬-스토리지에-저장된-아이템을-모두-목록에-출력한-화면&quot;&gt;로컬 스토리지에 저장된 아이템을 모두 목록에 출력한 화면&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todolistdata.PNG&quot; alt=&quot;todolistdata&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;todolistvue에-할-일-삭제-기능-추가&quot;&gt;TodoList.vue에 할 일 삭제 기능 추가&lt;/h1&gt;
+
+&lt;h2 id=&quot;할-일-목록--삭제-버튼-마크업&quot;&gt;할 일 목록 &amp;amp; 삭제 버튼 마크업&lt;/h2&gt;
+
+&lt;h3 id=&quot;todolist-컴포넌트의-template-코드&quot;&gt;TodoList 컴포넌트의 template 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;template&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;v-for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;todoItem in todoItems&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;todoItem&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shadow&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;checkBtn fas fa-check&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;aria-hidden=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+                {{ todoItem }}
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;removeBtn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;far fa-trash-alt&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;aria-hidden=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/template&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;i&amp;gt;&lt;/code&gt; 태그로 할 일 체크 버튼과 삭제 버튼에 사용할 체크 아이콘과 휴지통 아이콘을 추가합니다. 각 아이콘의 영역이 좁기 때문에 아이콘을 클릭했을 때 이벤트를 잘 잡을 수 있게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;i&amp;gt;&lt;/code&gt; 태그에 상위 태그 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;span&amp;gt;&lt;/code&gt; 을 두어 클릭할 수 있는 영역을 키웁니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;todolist-컴포넌트의-css-코드&quot;&gt;TodoList 컴포넌트의 CSS 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;scoped&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.list-enter-active&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.list-leave-active&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.list-enter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.list-leave-to&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translateY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;list-style-type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;min-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.5rem&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.9rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.checkBtn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;45px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#62acde&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.removeBtn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#de4343&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;todolist-컴포넌트의-css-스타일링을-완료한-화면&quot;&gt;TodoList 컴포넌트의 CSS 스타일링을 완료한 화면&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todolistcss.PNG&quot; alt=&quot;todolistcss&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;할-일-삭제-버튼에-클릭-이벤트-추가&quot;&gt;할 일 삭제 버튼에 클릭 이벤트 추가&lt;/h2&gt;
+
+&lt;p&gt;휴지통 아이콘을 클릭했을 떄 삭제하는 기능이 실행되도록 클릭 이벤트를 추가하겠습니다. 휴지통 아이콘의 근처 영역을 클릭해도 클릭 이벤트가 실행될 수 있게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;span&amp;gt;&lt;/code&gt; 태그에 클릭 이벤트를 추가합니다. @click 은 v-on:click과 동일하게 동작합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;클릭-이벤트-removetodo를-추가한-코드&quot;&gt;클릭 이벤트 removeTodo를 추가한 코드&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;span class=&quot;removeBtn&quot; type=&quot;button&quot; @click=&quot;removeTodo&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이벤트가 잘 실행되는지 확인하는 console.log()를 추가합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;메서드에-정의한-removetodo-코드&quot;&gt;메서드에 정의한 removeTodo 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;removeTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;clicked&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;휴지통-버튼을-클릭해-실행한-화면&quot;&gt;휴지통 버튼을 클릭해 실행한 화면&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todolistclicked.PNG&quot; alt=&quot;todolistclicked&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;선택한-할-일-뷰에서-인식&quot;&gt;선택한 할 일 뷰에서 인식&lt;/h2&gt;
+
+&lt;p&gt;휴지통 아이콘을 클릭햇을 때 선택한 할 일의 텍스트 값과 인덱스를 가져오는 코드를 추가하겠습니다. 여기서 할 일 목록의 인덱스는 뷰에서 내부적으로 관리하고 있습니다. template 코드와 removeTodo() 코드를 수정하여 텍스트 값과 인덱스(목록에서 순서, 배열 인덱스와 동일)를 반환합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;선택한-할-일-아이템을-인식하기-위한-template-코드&quot;&gt;선택한 할 일 아이템을 인식하기 위한 template 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;template&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;v-for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(todoItem, index) in todoItems&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;todoItem&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shadow&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;checkBtn fas fa-check&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;aria-hidden=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+                {{ todoItem }}
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;removeBtn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;removeTodo(todoItem, index)&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;far fa-trash-alt&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;aria-hidden=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/template&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;선택한-할-일을-인식하는-removetodo-코드&quot;&gt;선택한 할 일을 인식하는 removeTodo 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;removeTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todoItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todoItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;v-for 디렉티브에 index가 추가되었습니다. index는 임의로 정의한 변수가 아니라 v-for 디렉티브에서 기본적으로 제공하는 변수입니다. v-for 디렉티브로 반복한 요소는 모두 뷰에서 내부적으로 인덱스를 부여합니다. 특정 할 일의 휴지통 아이콘을 클릭하면 할 일의 텍스트 값과 인덱스 값이 콘솔에 표시됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;각각의-할-일을-클릭했을-때의-결과-화면&quot;&gt;각각의 할 일을 클릭했을 때의 결과 화면&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todolistindex.PNG&quot; alt=&quot;todolistindex&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;선택한-할-일을-로컬-스토리지와-뷰-데이터에서-삭제&quot;&gt;선택한 할 일을 로컬 스토리지와 뷰 데이터에서 삭제&lt;/h2&gt;
+
+&lt;h3 id=&quot;로컬-스토리지와-뷰-데이터에서-할-일을-삭제하는-코드&quot;&gt;로컬 스토리지와 뷰 데이터에서 할 일을 삭제하는 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;removeTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todoItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;removeItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todoItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todoItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 코드는 로컬 스토리지의 데이터를 삭제하는 removeItem() API와 배열의 특정 인덱스를 삭제하는 splice() API로 할 일을 삭제하는 코드입니다.&lt;/p&gt;
+
+&lt;p&gt;removeItem() API는 todoItem 인자를 사용하여 로컬 스토리지에서 할 일 텍스트를 삭제합니다. splice() API는 인자로 받은 index를 이용하여 배열의 해당 인덱스에서 1만큼 삭제합니다. splice()는 자바스크립트 기본 내장 API입니다. 배열의 특정 인덱스에서 부여한 숫자만큼의 인덱스에 해당하는 데이터를 삭제합니다.&lt;/p&gt;
+
+&lt;p&gt;할 일 목록에서 특정 할 일의 휴지통 아이콘을 클릭하면 목록에서 사라짐과 동시에 로컬 스토리지에 있던 데이터도 삭제됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;첫-번째-아이템-jquery를-삭제한-화면&quot;&gt;첫 번째 아이템 JQuery를 삭제한 화면&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todolistdelate.PNG&quot; alt=&quot;todolistdelate&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 주목할 부분은 뷰 데이터 속성인 todoItems의 배열 요소를 제거하자마자 바로 뷰에서 자동으로 화면을 다시 갱신한다는 점입니다. 이는 데이터의 속성이 변하면 화면에 즉시 반영하는 뷰의 반응성 때문입니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;모두-삭제하기-버튼을-포함하는-todofooter-컴포넌트&quot;&gt;모두 삭제하기 버튼을 포함하는 TodoFooter 컴포넌트&lt;/h1&gt;
+
+&lt;p&gt;이 컴포넌트에는 등록된 모든 할 일을 삭제하는 버튼이 들어갑니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;모두-삭제하기-버튼-추가&quot;&gt;모두 삭제하기 버튼 추가&lt;/h2&gt;
+
+&lt;p&gt;[Clear All] 버튼을 추가하기 위해 다음과 같이 코딩합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;todofooter-컴포넌트-코드&quot;&gt;todoFooter 컴포넌트 코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+    &amp;lt;div class=&quot;clearAllContainer&quot;&amp;gt;
+        &amp;lt;span class=&quot;clearAllBtn&quot; @click=&quot;clearTodo&quot;&amp;gt;Clear All&amp;lt;/span&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+export default {
+    methods: {
+        clearTodo() {
+            localStorage.clear();
+        }
+    }
+}
+&amp;lt;/script&amp;gt;
+
+&amp;lt;style scoped&amp;gt;
+    .clearAllContainer {
+        width: 8.5rem;
+        height: 50px;
+        line-height: 50px;
+        background-color: white;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+    .clearAllBtn {
+        color: #e20303;
+        display: black;
+    }
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;template&amp;gt;&lt;/code&gt; 태그에 버튼 역할을 하는 태그 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;span&amp;gt;&lt;/code&gt; 을 정의하고, clearTodo 클릭 이벤트를 추가합니다. 버튼의 이름은 “Clear All”이며, 클릭했을 때 메서드에 정의한 clearTodo() 로직이 실행됩니다. clearTodo() 메서드에는 로컬 스토리지의 데이터를 모두 삭제하는 localStorage.clear()를 정의합니다. CSS 코드에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;span&amp;gt;&lt;/code&gt; 태그가 버튼 모양을 가질 수 있도록 간단한 속성을 추가합니다.&lt;/p&gt;
+
+&lt;p&gt;애플리케이션을 실행하면 다음과 같은 결과 화면이 나옵니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;todofooter가-구현된-화면&quot;&gt;todoFooter가 구현된 화면&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todofooter.PNG&quot; alt=&quot;todofooter&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 [Clear All] 버튼을 클릭하면 아래와 같이 로컬 스토리지의 데이터는 삭제되지만 화면이 자동으로 갱신되지는 않습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;clear-all-버튼을-클릭했을-때의-결과-화면&quot;&gt;[Clear All] 버튼을 클릭했을 때의 결과 화면&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/todofooterclear.PNG&quot; alt=&quot;todofooterclear&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;따라서 다시 브라우저를 새로 고침해야만 할 일 목록이 로컬 스토리지에 저장되어 있는 데이터를 반영하여 표시합니다. 할 일 목록 데이터는 TodoFooter 컴포넌트가 아닌 TodoList 컴포넌트에 있기 때문입니다.&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">각 컴포넌트 역할에 맞춰 컴포넌트 기능을 구현해 보겠습니다. 컴포넌트별로 구현할 기능은 아래와 같습니다.</summary></entry><entry><title type="html">깃허브 백업</title><link href="https://javascriptvuejs.github.io//2021/01/19/github.html" rel="alternate" type="text/html" title="깃허브 백업" /><published>2021-01-19T00:00:00+09:00</published><updated>2021-01-19T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/19/github</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/19/github.html">&lt;h1 id=&quot;원격저장소&quot;&gt;원격저장소&lt;/h1&gt;
 
 &lt;p&gt;깃에서는 지역 저장소와 원격 저장소(remote repository)를 연결하여 버전 관리하는 파일들을 쉽게 백업할 수 있습니다. 원격 저장소는 지역 저장소가 아닌 컴퓨터나 서버에 만든 저장소를 말합니다.&lt;/p&gt;
 
@@ -1819,204 +2382,4 @@ methods: {
 
 &lt;p&gt;이벤트 버스를 활용하면 props 속성을 이용하지 않고도 원하는 컴포넌트 같에 직접적으로 데이터를 전달할 수 있어 편리하지만 컴포넌트가 많아지면 어디서 어디로 보냈는지 관리가 되지 않는 문제가 발생합니다. 이 문제를 해결하기 위해서는 뷰엑스(Vuew) 상태 관리도구가 필요합니다.&lt;/p&gt;
 
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">컴포넌트 유효 범위</summary></entry><entry><title type="html">뷰 컴포넌트</title><link href="https://javascriptvuejs.github.io//2021/01/09/component.html" rel="alternate" type="text/html" title="뷰 컴포넌트" /><published>2021-01-09T00:00:00+09:00</published><updated>2021-01-09T00:00:00+09:00</updated><id>https://javascriptvuejs.github.io//2021/01/09/component</id><content type="html" xml:base="https://javascriptvuejs.github.io//2021/01/09/component.html">&lt;h1 id=&quot;컴포넌트란&quot;&gt;컴포넌트란?&lt;/h1&gt;
-
-&lt;p&gt;조합하여 화면을 구성할 수 있는 블록(화면의 특정 영역)을 의미합니다.&lt;/p&gt;
-
-&lt;p&gt;뷰에서는 웹 화면을 구성할 때 흔히 사용하는 내비게이션 바(navigation bar), 테이블(table), 리스트(list), 인풋 박스(input box) 등과 같은 화면 구성 요소들을 잘게 쪼개어 컴포넌트로 관리합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;컴포넌트로-구분한-화면-영역-간의-관계도&quot;&gt;컴포넌트로 구분한 화면 영역 간의 관계도&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/component.png&quot; alt=&quot;component&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이처럼 뷰의 컴포넌트간 관계는 트리(Tree)구조를 가지고 있습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;트리구조&quot;&gt;트리구조&lt;/h3&gt;
-
-&lt;p&gt;트리란 컴퓨터 자료구조 중 하나로, 노드끼리의 연결이 부모 - 자식 구조를 따릅니다. 전체적인 모양이 나무와 비슷해서 트리라고 부릅니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;컴포넌트-등록&quot;&gt;컴포넌트 등록&lt;/h1&gt;
-
-&lt;p&gt;컴포넌트를 등록하는 방법은 전역과 지역의 두 가지가 있습니다. 지역(Local) 컴포넌트는 정해진 특정 구역에서만 사용할 수 있는 컴포넌트이고, 전역(Global) 컴포넌트는 모든 인스턴스에서 공통으로 사용할 수 있는 컴포넌트입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;전역-컴포넌트&quot;&gt;전역 컴포넌트&lt;/h2&gt;
-
-&lt;p&gt;전역 컴포넌트는 뷰 라이브러리를 로딩하고 나면 접근 가능한 Vue 변수를 이용하여 등록합니다. 전역 컴포넌트를 모든 인스턴스에 등록하려면 Vue 생성자에 .component()를 호출하여 수행하면 됩니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;전역-컴포넌트-등록-형식&quot;&gt;전역 컴포넌트 등록 형식&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Vue.component('컴포넌트 이름', {
-    //컴포넌트 내용
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;컴포넌트 이름은 template 속성을 사용할 HTML 사용자 정의 태크(custom tag) 이름을 의미합니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;template-속성&quot;&gt;template 속성&lt;/h4&gt;
-
-&lt;p&gt;화면에 표시될 HTML 코드를 담고 있는 속성입니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;사용자 정의 태크&lt;/strong&gt;: HTMl 표준 태그들 이외에도 웹 개발자가 직접 정의하여 사용할 수 있는 태크&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;즉, 컴포넌트 태그가 실제 화면의 HTML 요소로 변환될 떄 표시될 template 등의 속성들을 컴포넌트 내용에 작성합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;전역-컨포넌트-등록&quot;&gt;전역 컨포넌트 등록&lt;/h3&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Vue Component Registration&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;컴포넌트 등록&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;my-component&amp;gt;&amp;lt;/my-component&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;my-component&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;div&amp;gt;전역 컴포넌트가 등록되었습니다!&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-            &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 코드를 실행하면 아래와 같은 결과 화면이 나타납니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/globalcomponent.png&quot; alt=&quot;globalcomponent&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;전역 컴포넌트를 등록하기 위해 HTML에서 사용할 태그 이름을 컴포넌트 이름으로 작성하고, 중괄호 { } 안에 컴포넌트 내용을 작성합니다.&lt;/p&gt;
-
-&lt;p&gt;컴포넌트 이름을 my-component로 지정 하였으므로 HTML에 작성된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;my-component&amp;gt;&amp;lt;/my-component&amp;gt;&lt;/code&gt; 에 컴포넌트가 등록됩니다.&lt;/p&gt;
-
-&lt;p&gt;컴포넌트 내용으로는 template 속성을 정의하고 template에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;전역 컴포넌트가 등록되었습니다!&amp;lt;/div&amp;gt;&lt;/code&gt; 라는 div 태그를 등록하였습니다.&lt;/p&gt;
-
-&lt;p&gt;따라서 등록된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;my-component&amp;gt;&amp;lt;/my-component&amp;gt;&lt;/code&gt; 컴포넌트는 실제로 화면에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;전역 컴포넌트가 등록되었습니다!&amp;lt;/div&amp;gt;&lt;/code&gt; 와 같이 랜더링됩니다.&lt;/p&gt;
-
-&lt;p&gt;결과적으로 인스턴스가 생성된 후 화면에 컴포넌트가 랜더링 될때 실제 HTML 코드는 다음과 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/globalcomponentconclusion.png&quot; alt=&quot;globalcomponentconclusion&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;지역-컴포넌트&quot;&gt;지역 컴포넌트&lt;/h2&gt;
-
-&lt;p&gt;지역 컴포넌트 등록은 전역 컴포넌트 등록과는 다르게 인스턴스에 components 속성을 추가하고 등록할 컴포넌트 이름과 내용을 정의합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;지역-컴포넌트-등록-형식&quot;&gt;지역 컴포넌트 등록 형식&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;new Vue({
-    components: {
-        '컴포넌트 이름': 컴포넌트 내용
-    }
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;컴포넌트 이름은 전역 컴포넌트와 마찬가지로 HTML에 등록할 사용자 정의 태그를 의미하고, 컴포넌트 내용은 태그가 실제 화면 요소로 랜더링될 때의 내용을 의미합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;지역-컴포넌트-등록&quot;&gt;지역 컴포넌트 등록&lt;/h3&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Vue Component Registration&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&amp;gt;&lt;/span&gt;컴포넌트 등록&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;my-local-component&amp;gt;&amp;lt;/my-local-component&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//컴포넌트 내용&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;div&amp;gt;지역 컴포넌트가 등록되었습니다!&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-            &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;my-local-component&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cmp&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;뷰 인스턴스에 components 속성을 추가하고 컴포넌트 이름에는 my-local-component를, 컴포넌트 내용에는 컴포넌트 내용을 정의한 변수 cmp를 지정합니다. 변수 cmp에는 template 속성을 이용하여 화면에 나타낼 컴포넌트의 내용을 정의했습니다. 그리고 HTML에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;my-local-component&amp;gt;&amp;lt;/my-local-component&amp;gt;&lt;/code&gt;를 추가하여 컴포넌트를 화면에 랜더링합니다.&lt;/p&gt;
-
-&lt;p&gt;아래와 같은 결과화면이 나타납니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/localcomponent.png&quot; alt=&quot;localcomponent&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;지역-컴포넌트와-전역-컴포넌트의-차이&quot;&gt;지역 컴포넌트와 전역 컴포넌트의 차이&lt;/h1&gt;
-
-&lt;p&gt;지역 컴포넌트와 전역 컴포넌트의 차이는 인스턴스 유효범위와 밀접한 관련이 있습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;인스턴스-유효-범위와-지역-컴포넌트-전역-컴포넌트-간-관계&quot;&gt;인스턴스 유효 범위와 지역 컴포넌트, 전역 컴포넌트 간 관계&lt;/h3&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Vue Local and Global Components&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;첫 번째 인스턴스 영역&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;my-global-component&amp;gt;&amp;lt;/my-global-component&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;my-local-component&amp;gt;&amp;lt;/my-local-component&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;hr&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;두 번째 인스턴스 영역&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;my-global-component&amp;gt;&amp;lt;/my-global-component&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;my-local-component&amp;gt;&amp;lt;/my-local-component&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-           &lt;span class=&quot;c1&quot;&gt;// 전역 컴포넌트 등록&lt;/span&gt;
-           &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;my-global-component&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;div&amp;gt;전역 컴포넌트입니다.&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-           &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-           &lt;span class=&quot;c1&quot;&gt;// 지역 컴포넌트 내용&lt;/span&gt;
-           &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;div&amp;gt;지역 컴포넌트입니다.&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-           &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-           &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-               &lt;span class=&quot;c1&quot;&gt;// 지역 컴포넌트 등록&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                   &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;my-local-component&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cmp&lt;/span&gt;
-               &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-           &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-           &lt;span class=&quot;c1&quot;&gt;// 두 번째 인스턴스&lt;/span&gt;
-           &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#app2&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-           &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 코드의 결과는 다음과 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/componentconclusion.png&quot; alt=&quot;componentconclusion&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;전역 컴포넌트는 인스턴스를 새로 생성할 때마다 인스턴스에 components 속성으로 등록할 필요 없이 한 번 등록으로 어느 인스턴스에서든지 사용할 수 있습니다. 반대로 지역 컴포넌트는 새로 인스턴스를 생성할 때마다 등록해 줘야 합니다.&lt;/p&gt;
-
-&lt;p&gt;첫 번째 인스턴스의 유효 범위는 첫 번째 인스턴스 영역으로 제한됩니다. 따라서 첫 번째 인스턴스에서 정의한 컴포넌트는 두 번째 인스턴스에서 인식되지 않습니다.&lt;/p&gt;
-
-&lt;hr /&gt;</content><author><name></name></author><summary type="html">컴포넌트란?</summary></entry></feed>
+&lt;hr /&gt;</content><author><name></name></author><summary type="html">컴포넌트 유효 범위</summary></entry></feed>

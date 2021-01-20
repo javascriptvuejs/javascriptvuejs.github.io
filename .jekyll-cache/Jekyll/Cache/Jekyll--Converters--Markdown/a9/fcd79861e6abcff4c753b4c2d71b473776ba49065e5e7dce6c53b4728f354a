@@ -1,0 +1,123 @@
+I"<p>각 컴포넌트 역할에 맞춰 컴포넌트 기능을 구현해 보겠습니다. 컴포넌트별로 구현할 기능은 아래와 같습니다.</p>
+
+<ul>
+  <li>TodoHeader: 애플리케이션 이름 표시</li>
+  <li>TodoInput: 할 일 입력 및 추가</li>
+  <li>TodoList: 할 일 목록 표시 및 특정 할 일 삭제</li>
+  <li>TodoFooter: 할 일 모두 삭제</li>
+</ul>
+
+<h1 id="애플리케이션-제목을-보여주는-todoheader-컴포넌트">애플리케이션 제목을 보여주는 TodoHeader 컴포넌트</h1>
+
+<h2 id="애플리케이션-제목-추가">애플리케이션 제목 추가</h2>
+
+<p>어떤 애플리케이션인지 파악하기 쉽게 애플리케이션 제목을 추가하겠습니다. <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> 태그를 삭제하고 <code class="language-plaintext highlighter-rouge">&lt;header&gt;</code> 와 <code class="language-plaintext highlighter-rouge">&lt;h1&gt;</code> 태그를 활용하여 아래처럼 제목을 표시합니다.</p>
+
+<h3 id="todoheader-컴포넌트의-template-내용">TodoHeader 컴포넌트의 <code class="language-plaintext highlighter-rouge">&lt;template&gt;</code> 내용</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
+    &lt;header&gt;
+        &lt;h1&gt;TODO it!&lt;/h1&gt;
+    &lt;/header&gt;
+&lt;/template&gt;
+</code></pre></div></div>
+
+<h2 id="css로-제목-꾸미기">CSS로 제목 꾸미기</h2>
+
+<p>제목 스타일링을 위해 최상위 컴포넌트의 App.vue와 TodoHeader.vue에 다음과 같이 CSS를 추가합니다.</p>
+
+<h3 id="appvue의-css-스타일">App.vue의 CSS 스타일</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+    <span class="nt">body</span> <span class="p">{</span>
+        <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="m">#F6F6F8</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">input</span> <span class="p">{</span>
+        <span class="nl">border-style</span><span class="p">:</span> <span class="nb">groove</span><span class="p">;</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">button</span> <span class="p">{</span>
+        <span class="nl">border-style</span><span class="p">:</span> <span class="nb">groove</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.shadow</span> <span class="p">{</span>
+        <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">5px</span> <span class="m">10px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.03</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="todoheadervue의-css-스타일">TodoHeader.vue의 CSS 스타일</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">scoped</span><span class="o">&gt;</span>
+    <span class="nt">h1</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="m">#2F3B52</span><span class="p">;</span>
+        <span class="nl">font-weight</span><span class="p">:</span> <span class="m">900</span><span class="p">;</span>
+        <span class="nl">margin</span><span class="p">:</span> <span class="m">2.5rem</span> <span class="m">0</span> <span class="m">1.5rem</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>App.vue와 TodoHeader.vue에 추가한 스타일의 역할은 각각 다음과 같습니다.</p>
+
+<hr />
+
+<p><strong>background-color</strong>: 애플리케이션 전체의 배경 색을 꾸미기 위해 지정</p>
+
+<p><strong>text-align</strong>: 애플리케이션 전체에서 사용하는 텍스트의 정렬 방식을 선택</p>
+
+<p><strong>border-style</strong>: 할 일을 입력하는 인풋 박스의 테두리 모양을 정의</p>
+
+<p><strong>box-shadow</strong>: 할 일을 입력하는 인풋 박스와 할 일 아이템의 아래 그림자 정의</p>
+
+<p><strong>color</strong>: 애플리케이션 제목의 텍스트 색깔을 지정</p>
+
+<p><strong>font-weight</strong>: 애플리케이션 제목의 텍스트 굵기를 지정</p>
+
+<p><strong>margin</strong>: 애플리케이션 제목의 텍스트 여백을 지정</p>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> 태그에 사용된 scoped는 뷰에서 지원하는 속성이며, 스타일 정의를 해당 컴포넌트에만 적용하겠다는 의미입니다.</p>
+
+<p>앞 코그의 실행 결과는 아래와 같습니다.</p>
+
+<h3 id="todoheader-컴포넌트-등록-결과">TodoHeader 컴포넌트 등록 결과</h3>
+
+<p><img src="/images/todoheader.PNG" alt="todoheader" /></p>
+
+<hr />
+
+<h1 id="할-일을-입력하는-todoinput-컴포넌트">할 일을 입력하는 TodoInput 컴포넌트</h1>
+
+<h2 id="인풋-박스와-버튼-추가">인풋 박스와 버튼 추가</h2>
+
+<p>텍스트 값을 입력받기 위한 <code class="language-plaintext highlighter-rouge">&lt;input&gt;</code> 태그와 텍스트 값을 저장하기 위한 <code class="language-plaintext highlighter-rouge">&lt;button&gt;</code> 태그를 추가합니다. <code class="language-plaintext highlighter-rouge">&lt;button&gt;</code> 태그의 이름은 “추가”로 지정합니다. 태그를 추가하면 화면에서 input 텍스트가 있던 자리에 인풋 박스와 버튼이 생깁니다. 인풋 박스에 텍스트를 입력했을 때 뷰 인스턴스에서 텍스트 값을 인식할 수 있게 v-model 디렉티브와 데이터 속성 newTodoItem을 다음과 같이 추가합니다.</p>
+
+<h3 id="인풋-박스에-v-model-디렉티브와-data-속성을-추가한-todoinput-컴포넌트-코드">인풋 박스에 v-model 디렉티브와 data 속성을 추가한 TodoInput 컴포넌트 코드</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
+    &lt;div&gt;
+        &lt;input type="text" v-model="newTodoItem"&gt;
+        &lt;button&gt;추가&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+    data() {
+        return {
+            newTodoItem: ''
+        }
+    }
+}
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>위 코드를 실행한 후 뷰 개발자 도구를 엽니다. 뷰 개발자 도구에서 “components” 탭의 <code class="language-plaintext highlighter-rouge">&lt;app&gt;</code> 아래 있는 <code class="language-plaintext highlighter-rouge">&lt;TodoInput&gt;</code> 부분을 클릭하면 newTodoItem의 값이 ““로 되어 있습니다. 인풋 박스에 Hello라는 텍스트를 입력하면서 newTodoItem의 값을 지켜보면 텍스트를 입력함에 따라 newTodoItem의 값도 갱신되는 것을 확인할 수 있습니다.</p>
+
+<h3 id="인풋-박스의-입력-값에-따라-갱신되는-newtodoitem-데이터">인풋 박스의 입력 값에 따라 갱신되는 newTodoItem 데이터</h3>
+
+<p><img src="/images/todoinput.PNG" alt="todoinput" /></p>
+
+<h2 id="텍스트를-저장하기-위한-버튼-이벤트">텍스트를 저장하기 위한 버튼 이벤트</h2>
+:ET

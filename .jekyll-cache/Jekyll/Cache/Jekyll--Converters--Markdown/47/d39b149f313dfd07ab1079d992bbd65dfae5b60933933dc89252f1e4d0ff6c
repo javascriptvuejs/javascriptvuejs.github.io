@@ -1,0 +1,25 @@
+I"�<p>각 컴포넌트 역할에 맞춰 컴포넌트 기능을 구현해 보겠습니다. 컴포넌트별로 구현할 기능은 아래와 같습니다.</p>
+
+<ul>
+  <li>TodoHeader: 애플리케이션 이름 표시</li>
+  <li>TodoInput: 할 일 입력 및 추가</li>
+  <li>TodoList: 할 일 목록 표시 및 특정 할 일 삭제</li>
+  <li>TodoFooter: 할 일 모두 삭제</li>
+</ul>
+
+<h1 id="애플리케이션-제목을-보여주는-todoheader-컴포넌트">애플리케이션 제목을 보여주는 TodoHeader 컴포넌트</h1>
+
+<h2 id="애플리케이션-제목-추가">애플리케이션 제목 추가</h2>
+
+<p>어떤 애플리케이션인지 파악하기 쉽게 애플리케이션 제목을 추가하겠습니다. <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> 태그를 삭제하고 <code class="language-plaintext highlighter-rouge">&lt;header&gt;</code> 와 <code class="language-plaintext highlighter-rouge">&lt;h1&gt;</code> 태그를 활용하여 아래처럼 제목을 표시합니다.</p>
+
+<h3 id="todoheader-컴포넌트의-template-내용">TodoHeader 컴포넌트의 <code class="language-plaintext highlighter-rouge">&lt;template&gt;</code> 내용</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
+    &lt;header&gt;
+        &lt;h1&gt;TODO it!&lt;/h1&gt;
+    &lt;/header&gt;
+&lt;/template&gt;
+</code></pre></div></div>
+
+:ET
