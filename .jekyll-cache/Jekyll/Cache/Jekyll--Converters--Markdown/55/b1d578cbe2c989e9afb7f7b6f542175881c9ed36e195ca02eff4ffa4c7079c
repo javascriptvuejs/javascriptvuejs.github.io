@@ -1,0 +1,235 @@
+I"�P<h1 id="현재-애플리케이션-구조의-문제점">현재 애플리케이션 구조의 문제점</h1>
+
+<p>지금까지 구현한 애플리케이션의 문제점은 다음 2가지입니다.</p>
+
+<hr />
+
+<ul>
+  <li>할 일을 입력했을 때 할 일 목록에 바로 반영되지 않는 점</li>
+  <li>할 일을 모두 삭제했을 때 할 일 목록에 바로 반영되지 않는 점</li>
+</ul>
+
+<hr />
+
+<p>현재 화면을 4개의 컴포넌트로 분리해 놓았기 때문에 한 영역의 처리 결과를 다은 영역에서 감지하지 못하여 뷰의 반응성이 적용되지 않습니다.</p>
+
+<p>이 문제를 해결하기 위해서 컴포넌트를 4개로 분리하지 않고 한 컴포넌트 안에서 모두 처리하는 방법이 있습니다. 하지만 이러한 방법은 향후 재사용성이 떨이질 뿐만 아니라 애플리케이션이 거대해질수록 설계와 구현이 어려워집니다.</p>
+
+<p>따라서 이러한 문제는 컴포넌트 통신을 이용하여 해결해야 합니다.</p>
+
+<hr />
+
+<h1 id="애플리케이션-구조-개선">애플리케이션 구조 개선</h1>
+
+<p>현재 애플리케이션은 각각의 컴포넌트에서만 사용할 수 있는 뷰 데이터 속성(newTodoItem, todoItems)을 갖고 있습니다. 하지만 로컬 스토리지의 todoItems, TodoInput의 newTodoItem, TodoList의 todoItems는 모두 “할 일”이라는 같은 성격의 데이터를 사용하고 있습니다. 따라서 모든 컴포넌트가 “같은 데이터 속성(할 일)”을 조작한다면 화면을 매번 새로 고침해야 하는 문제점을 해결할 수 있습니다.</p>
+
+<p>이러한 문제점을 해결하기 위해 이전의 각각 컴포넌트에서 구현하던 로직을 최상위(루트) 컴포넌트인 App 컴포넌트에서 구현합니다. 그리고 하위 컴포넌트들은 그 데이터를 표현하거나 데이터 조작에 대한 요청(이벤트 발생)을 합니다. 즉, 같은 데이터 속성을 사용하기 위해 App 컴포넌트에 todoItems라는 데이터를 정의하고, 하위 컴포넌트 TodoList에 props로 전달합니다.</p>
+
+<p>이러한 중앙 집중 관리 방식은 상태 관리 라이브러리인 뷰엑스로 발전합니다.</p>
+
+<hr />
+
+<h1 id="props와-이벤트-전달">props와 이벤트 전달</h1>
+
+<p>최상위 컴포넌트인 App 컴포넌트(App.vue)에 데이터 속성 todoItems를 선언합니다. 그리고 addTodo() 메서드를 추가합니다.</p>
+
+<h3 id="appvue-파일에-todoitems-데이터-속성과-addtodo-메서드를-추가한-코드">App.vue 파일에 todoItems 데이터 속성과 addTodo() 메서드를 추가한 코드</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">todoItems</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">addTodo</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">//로컬 스토리지에 데이터를 추가하는 로직</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">TodoHeader</span><span class="dl">'</span><span class="p">:</span> <span class="nx">TodoHeader</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">TodoInput</span><span class="dl">'</span><span class="p">:</span> <span class="nx">TodoInput</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">TodoList</span><span class="dl">'</span><span class="p">:</span> <span class="nx">TodoList</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">TodoFooter</span><span class="dl">'</span><span class="p">:</span> <span class="nx">TodoFooter</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>선언한 todoItems 속성을 TodoList 컴포넌트에 props로 전달합니다. TodoInput 컴포넌트 태그에는 할 일 추가 버튼을 클릭했을 때 App 컴포넌트로 이벤트를 전달할 수 있게 v-on 디렉티브를 추가합니다.</p>
+
+<h3 id="appvue-파일의-컴포넌트-태그에-props와-이벤트-전달을-위한-v-on-디렉티브-속성-추가">App.vue 파일의 컴포넌트 태그에 props와 이벤트 전달을 위한 v-on 디렉티브 속성 추가</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;TodoHeader&gt;&lt;/TodoHeader&gt;</span>
+    <span class="nt">&lt;TodoInput</span> <span class="na">v-on:addTodo=</span><span class="s">"addTodo"</span><span class="nt">&gt;&lt;/TodoInput&gt;</span>
+    <span class="nt">&lt;TodoList</span> <span class="na">v-bind:propsdata=</span><span class="s">"todoItems"</span><span class="nt">&gt;&lt;/TodoList&gt;</span>
+    <span class="nt">&lt;TodoFooter&gt;&lt;/TodoFooter&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre></div></div>
+
+<h3 id="todolistvue-파일에-추가한-props-속성">Todolist.vue 파일에 추가한 props 속성</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+    <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">propsdata</span><span class="dl">'</span><span class="p">],</span>
+</code></pre></div></div>
+
+<p>App.vue 파일에 todoItems 데이터 속성을 선언하고, TodoList 컴포넌트의 propsdata 속성에 props로 전달하였습니다. 그리고 TodoInput 컴포넌트 태그에서 버튼을 클릭했을 때 발생하는 이벤트 이름을 addTodo로 정합니다. 해당 이벤트를 받아서 실행할 App 컴포넌트의 메서드도 addTodo()로 합니다.</p>
+
+<h2 id="todoinput-컴포넌트와-todolist-컴포넌트-수정">TodoInput 컴포넌트와 TodoList 컴포넌트 수정</h2>
+
+<p>props와 이벤트 전달을 적용하기 위해 상위 컴포넌트의 코드를 바꿨으니 이제는 하위 컴포넌트 TodoInput과 TodoList를 수정합니다.</p>
+
+<p>TodoInput 컴포넌트의 addTodo() 메서드에 <code class="language-plaintext highlighter-rouge">this.$emit('addTodo', value);</code> 를 추가합니다. 이벤트를 전달할 때 할 일 텍스트 값인 value 객체를 인자 값으로 전달합니다. 그리고 로컬 스토리지에 데이터를 저장하는 기존 코드 <code class="language-plaintext highlighter-rouge">localStorage.setItem(value, value);</code> 를 삭제합니다.</p>
+
+<h3 id="todoinputvue-파일의-addtodo-메서드를-수정한-코드">TodoInput.vue 파일의 addTodo() 메서드를 수정한 코드</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">addTodo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">newTodoItem</span> <span class="o">!==</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">newTodoItem</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">newTodoItem</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">addTodo</span><span class="dl">'</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">clearInput</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">},</span>
+</code></pre></div></div>
+
+<p>App 컴포넌트의 addTodo() 메서드에 아래와 같이 추가합니다.</p>
+
+<h3 id="appvue-파일의-addtodo-메서드">App.vue 파일의 addTodo() 메서드</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">addTodo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="nx">todoItem</span><span class="p">,</span> <span class="nx">todoItem</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">todoItem</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이제 + 버튼을 클릭하면 TodoInput 컴포넌트에서 App 컴포넌트로 신호(이벤트)를 보내 App 컴포넌트 addTodo() 메서드를 실행합니다.</p>
+
+<p>addTodo() 메서드의 인자 값 todoItem은 TodoInput 컴포넌트에서 올려 보낸 할 일 텍스트 값입니다. 이 값을 로컬 스토리지에 저장하고, App 컴포넌트의 TodoItems 데이터 속성에도 추가합니다.</p>
+
+<p>TodoList 컴포넌트의 template 내용을 아래와 같이 수정합니다.</p>
+
+<h3 id="todolistvue-파일의-v-for-디렉티브-대상-객체를-수정한-코드">TodoList.vue 파일의 v-for 디렉티브 대상 객체를 수정한 코드</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;li</span> <span class="na">v-for=</span><span class="s">"(todoItem, index) in propsdata"</span> <span class="na">:key=</span><span class="s">"todoItem"</span> <span class="na">class=</span><span class="s">"shadow"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"checkBtn fas fa-check"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span>
+    {{ todoItem }}
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"removeBtn"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="err">@</span><span class="na">click=</span><span class="s">"removeTodo(todoItem, index)"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"far fa-trash-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;li&gt;</code> 태그에서 v-for 디렉티브의 반복 대상을 propsdata로 변경하였습니다. 기존에는 TodoList의 데이터 속성인 todoItems였지만, 이제는 App 컴포넌트의 TodoItems 데이터의 개수만큼 목록 아이템을 생성합니다. 위 코드를 실행하고 화면에서 할 일을 추가하면 새로 고침을 하지 않고도 목록이 갱신되는 것을 확인할 수 있습니다.</p>
+
+<h2 id="todolist에서-불필요한-코드-제거">TodoList에서 불필요한 코드 제거</h2>
+
+<h3 id="todolistvue-파일-script-코드">TodoList.vue 파일 <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> 코드</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;
+export default {
+    props: ['propsdata'],
+    methods: {
+        removeTodo(todoItem, index) {
+            localStorage.removeItem(todoItem);
+            this.todoItems.splice(index, 1);
+        }
+    }
+}
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>TodoList 컴포넌트에서 사용하던 데이터 속성 todoItems는 이제 불필요하므로 제거합니다. 그리고 컴포넌트가 생성될 때 로컬 스토리지에 저장된 데이터를 모두 불러와 배열에 담아 주던 created() 로직도 App 컴포넌트로 옮깁니다. 이제 할 일 데이터(todoItems)는 모두 App.vue 파일에서 관리하기 때문입니다.</p>
+
+<h3 id="appvue-파일로-옮긴-created-로직">App.vue 파일로 옮긴 created() 로직</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+    <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span>
+        <span class="na">todoItems</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">created</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">key</span><span class="p">(</span><span class="nx">i</span><span class="p">));</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+<span class="p">...</span>
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="clear-all-버튼-기능-개선">Clear All 버튼 기능 개선</h1>
+
+<p>이번에는 [Clear All] 버튼을 눌렀을 때 자동으로 화면이 갱신될 수 있도록 코드를 변경하겠습니다.</p>
+
+<p>컴포넌트 간 이벤트 전달은 “하위 컴포넌트에서 발생시킨 이벤트를 상위 컴포넌트에서 받아 상위 컴포넌트 메서드를 동작시키는 것”입니다. 그러면 애플리케이션에서는 하위 컴포넌트인 TodoFooter에서 발생시킬 이벤트 이름을 removeAll로 하고, 상위 컴포넌트인 App에서 받아 실행시킬 메서드 이름을 clearAll()로 정하겠습니다.</p>
+
+<h2 id="상위-컴포넌트-코드-수정">상위 컴포넌트 코드 수정</h2>
+
+<p>상위 컴포넌트인 App.vue 파일에 아래의 내용을 추가합니다.</p>
+
+<h3 id="appvue의-todofooter-에-추가한-이벤트-전달-속성">App.vue의 <code class="language-plaintext highlighter-rouge">&lt;todoFooter&gt;</code> 에 추가한 이벤트 전달 속성</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TodoFooter</span> <span class="na">v-on:removeAll=</span><span class="s">"clearAll"</span><span class="nt">&gt;&lt;/TodoFooter&gt;</span>
+</code></pre></div></div>
+
+<h3 id="appvue-파일의-methods에-추가한-clearall-메서드">App.vue 파일의 methods에 추가한 clearAll() 메서드</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">clearAll</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="p">},</span>
+</code></pre></div></div>
+
+<p>App 컴포넌트의 clearAll() 메서드는 TodoFooter 컴포넌트의 [Clear All] 버튼을 클릭했을 때 로컬 스토리지의 데이터를 모두 삭제하고 todoItems의 데이터를 비웁니다. TodoFooter 컴포넌트의 clearTodo() 메서드에 구현했던 뷰 데이터 속성 todoItems 배열을 비우는 로직과 동일합니다.</p>
+
+<h2 id="하위-컴포넌트-코드-수정">하위 컴포넌트 코드 수정</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">clearTodo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">removeAll</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>[Clear All] 버튼을 클릭하면 removeAll 이벤트를 발생시켜 상위 컴포넌트(App.vue)로 전달합니다. 상위 컴포넌트에서 removeAll을 받아 상위 컴포넌트에 정의된 clearAll() 메서드를 실행합니다.</p>
+
+<h3 id="모든-할-일-삭제-전">모든 할 일 삭제 전</h3>
+
+<p><img src="/images/todobeforeclearall.PNG" alt="todobeforeclearall" /></p>
+
+<h3 id="모든-할-일-삭제-후">모든 할 일 삭제 후</h3>
+
+<p><img src="/images/todoafterclearall.PNG" alt="todoafterclearall" /></p>
+
+<hr />
+
+<h1 id="할-일-삭제-기능-개선">할 일 삭제 기능 개선</h1>
+
+<p>TodoList 컴포넌트의 각 할 일 아이템을 삭제하는 로직에도 이벤트 전달 방식을 적용합니다.</p>
+
+<p>App.vue 파일과 TodoList.vue 파일의 코드를 다음과 같이 변경합니다.</p>
+
+<h3 id="appvue의-todolist-컴포넌트-태그">App.vue의 TodoList 컴포넌트 태그</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TodoList</span> <span class="na">v-bind:propsdata=</span><span class="s">"todoItems"</span> <span class="err">@</span><span class="na">removeTodo=</span><span class="s">"removeTodo"</span><span class="nt">&gt;&lt;/TodoList&gt;</span>
+</code></pre></div></div>
+
+<h3 id="todolistvue의-removetodo-메서드">TodoList.vue의 removeTodo() 메서드</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">removeTodo</span><span class="p">(</span><span class="nx">todoItem</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">removeTodo</span><span class="dl">'</span><span class="p">,</span> <span class="nx">todoItem</span><span class="p">,</span> <span class="nx">index</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="appvue의-removetodo-메서드">App.vue의 removeTodo() 메서드</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">removeTodo</span><span class="p">(</span><span class="nx">todoItem</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="nx">todoItem</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET
