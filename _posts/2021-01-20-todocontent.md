@@ -394,13 +394,6 @@ export default {
 
 ```css
 <style scoped>
-    .list-enter-active, .list-leave-active {
-        transition: all 1s;
-    }
-    .list-enter, .list-leave-to {
-        opacity: 0;
-        transform: translateY(30px);
-    }
     ul {
         list-style-type: none;
         padding-left: 0px;

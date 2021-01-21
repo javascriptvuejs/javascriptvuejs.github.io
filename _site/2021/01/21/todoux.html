@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>할 일 관리 애플리케이션 튜토리얼(6/6) - 사용자 경험(UX) | Web Developer from Vue.js</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="할 일 관리 애플리케이션 튜토리얼(6/6) - 사용자 경험(UX)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="제작한 기능에 이어서 사용자 경험을 향상시키는 2가지 기능을 추가로 구현해 보겠습니다. 현재 애플리에키션은 화면이 리액티브하게 동작하기 때문에 할 일을 추가했을 때 목록의 맨 아래에 추가된 아이템이 갑자기 나타납니다. 할 일을 삭제할 때도 마찬가지로 목록에서 아이템이 불쑥 사라지기 때문에 어떤 아이템을 삭제했는지 놓치기 쉽습니다. 또한 할 일에 입력 값이 없는데 + 버튼을 누르거나 엔터를 누르는 경우 아무 이벤트가 발생하지 않기 때문에 자칫 오류가 있는 애플리케이션으로 착각할 수 있습니다." />
+<meta property="og:description" content="제작한 기능에 이어서 사용자 경험을 향상시키는 2가지 기능을 추가로 구현해 보겠습니다. 현재 애플리에키션은 화면이 리액티브하게 동작하기 때문에 할 일을 추가했을 때 목록의 맨 아래에 추가된 아이템이 갑자기 나타납니다. 할 일을 삭제할 때도 마찬가지로 목록에서 아이템이 불쑥 사라지기 때문에 어떤 아이템을 삭제했는지 놓치기 쉽습니다. 또한 할 일에 입력 값이 없는데 + 버튼을 누르거나 엔터를 누르는 경우 아무 이벤트가 발생하지 않기 때문에 자칫 오류가 있는 애플리케이션으로 착각할 수 있습니다." />
+<link rel="canonical" href="https://javascriptvuejs.github.io//2021/01/21/todoux.html" />
+<meta property="og:url" content="https://javascriptvuejs.github.io//2021/01/21/todoux.html" />
+<meta property="og:site_name" content="Web Developer from Vue.js" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-21T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="할 일 관리 애플리케이션 튜토리얼(6/6) - 사용자 경험(UX)" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"할 일 관리 애플리케이션 튜토리얼(6/6) - 사용자 경험(UX)","dateModified":"2021-01-21T00:00:00+09:00","datePublished":"2021-01-21T00:00:00+09:00","url":"https://javascriptvuejs.github.io//2021/01/21/todoux.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://javascriptvuejs.github.io//2021/01/21/todoux.html"},"description":"제작한 기능에 이어서 사용자 경험을 향상시키는 2가지 기능을 추가로 구현해 보겠습니다. 현재 애플리에키션은 화면이 리액티브하게 동작하기 때문에 할 일을 추가했을 때 목록의 맨 아래에 추가된 아이템이 갑자기 나타납니다. 할 일을 삭제할 때도 마찬가지로 목록에서 아이템이 불쑥 사라지기 때문에 어떤 아이템을 삭제했는지 놓치기 쉽습니다. 또한 할 일에 입력 값이 없는데 + 버튼을 누르거나 엔터를 누르는 경우 아무 이벤트가 발생하지 않기 때문에 자칫 오류가 있는 애플리케이션으로 착각할 수 있습니다.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://javascriptvuejs.github.io//feed.xml" title="Web Developer from Vue.js" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Web Developer from Vue.js</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">할 일 관리 애플리케이션 튜토리얼(6/6) - 사용자 경험(UX)</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-01-21T00:00:00+09:00" itemprop="datePublished">Jan 21, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>제작한 기능에 이어서 사용자 경험을 향상시키는 2가지 기능을 추가로 구현해 보겠습니다. 현재 애플리에키션은 화면이 리액티브하게 동작하기 때문에 할 일을 추가했을 때 목록의 맨 아래에 추가된 아이템이 갑자기 나타납니다. 할 일을 삭제할 때도 마찬가지로 목록에서 아이템이 불쑥 사라지기 때문에 어떤 아이템을 삭제했는지 놓치기 쉽습니다. 또한 할 일에 입력 값이 없는데 + 버튼을 누르거나 엔터를 누르는 경우 아무 이벤트가 발생하지 않기 때문에 자칫 오류가 있는 애플리케이션으로 착각할 수 있습니다.</p>
+
+<h1 id="뷰-애니메이션">뷰 애니메이션</h1>
+
+<p>뷰 애니메이션은 뷰 프레임워크 자제에서 지원하는 애니메이션 기능으로, 데이터 추가, 변경, 삭제에 대해서 페이드 인(fade in), 페이드 아웃(fade out) 등의 여러가지 애니메이션 효과를 지원합니다. 기타 자바스크립트 애니메이션 라이브러리나 CSS 애니메이션 라이브러리도 같이 사용할 수 있습니다.</p>
+
+<p>TodoList 컴포넌트의 할 일 목록에 애니메이션을 추가하기 위해 <code class="language-plaintext highlighter-rouge">&lt;template&gt;</code> 코드를 약간 변경해 보겠습니다.</p>
+
+<h3 id="todolist-컴포넌트의-template-코드">TodoList 컴포넌트의 <code class="language-plaintext highlighter-rouge">&lt;template&gt;</code> 코드</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;section&gt;</span>
+        <span class="nt">&lt;transition-group</span> <span class="na">name=</span><span class="s">"list"</span> <span class="na">tag=</span><span class="s">"ul"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">v-for=</span><span class="s">"(todoItem, index) in propsdata"</span> <span class="na">:key=</span><span class="s">"todoItem"</span> <span class="na">class=</span><span class="s">"shadow"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"checkBtn fas fa-check"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"removeBtn"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="err">@</span><span class="na">click=</span><span class="s">"removeTodo(todoItem, index)"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"far fa-trash-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                <span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/transition-group&gt;</span>
+    <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre></div></div>
+
+<p>기존의 <code class="language-plaintext highlighter-rouge">&lt;ul&gt;</code> 태그를 제거하고 <code class="language-plaintext highlighter-rouge">&lt;transition-group&gt;</code> 태그를 추가합니다. <code class="language-plaintext highlighter-rouge">&lt;transition-group&gt;</code> 은 목록에 애니메이션을 추가할 때 사용되는 태그이며, tag 속성에 애니메이션이 들어갈 HTML 태그 이름(p, ul, section 등등)을 지정하면 됩니다. name 속성은 CSS 클래스와 연관이 있습니다.</p>
+
+<h3 id="key-속성">:key 속성</h3>
+
+<p>뷰는 목록의 특정 아이템이 삭제되거나 추가되었을 때, 돔에서 나머지 아이템의 순서를 다시 조장하지 않고 프레임워크 내부적으로 전체 아이템의 순서를 제어합니다. 이렇게 프레임워크에서 목록 아이템의 순서를 제어하는 이유는 브라우저가 돔을 조작하는 데 소요되는 시간을 최고화하기 위해서입니다.</p>
+
+<p>예를 들어, 돔에서 목록 순서를 제어하는 경우를 살펴보겠습니다. 목록 아이템이 1000개가 있을 때, 두 번쨰 목록 아이템을 지우면 나머지 998개의 아이템이 모두 한 번씩 이동을 해야 합니다. 화면을 다시 그려야하는 브라우저 입장에서는 목록 아이템이 많으면 많을수록 랜더링 부담이 커집니다. 하지만 뷰 프레임워크에서 순서를 제어하는 경우 두 번째 아이템을 삭제했을 때 나머지 목록 아이템을 움직이지 않고, 내부적으로 아이템의 순서만 재조정하여 돔 이동을 최소화합니다. 따라서 브라우저에서 화면을 더 빨리 랜더링할 수 있고 :key 속성을 사용하면 이런 작업을 수행할 수 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;transition-group&gt;</code> 태그에 적용할 CSS 속성을 추가하겠습니다.</p>
+
+<h3 id="todolist-컴포넌트에-추가한-css-코드">TodoList 컴포넌트에 추가한 CSS 코드</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nt">style</span> <span class="nt">scoped</span><span class="o">&gt;</span>
+    <span class="nc">.list-enter-active</span><span class="o">,</span> <span class="nc">.list-leave-active</span> <span class="p">{</span>
+        <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">1s</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.list-enter</span><span class="o">,</span> <span class="nc">.list-leave-to</span> <span class="p">{</span>
+        <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="nl">transform</span><span class="p">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">30px</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>CSS 속성의 클래스를 보면 모두 앞에서 설정한 name 속성 값(list)을 접두사로 갖고 있습니다. enter-active, leave-active, enter, leave-to는 데이터가 들어오고 나가는 동작을 정의하는 CSS입니다.</p>
+
+<p>CSS 속성을 적용하여 화면을 실행하고 할 일을 추가하거나 삭제하면 할 일 아이템이 부드럽게 들어오고 나가는 애니메이션 동작을 확인할 수 있습니다.</p>
+
+<hr />
+
+<h1 id="뷰-모달">뷰 모달</h1>
+
+<p>현재 애플리케이션에서 인풋 박스에 아무 값도 넣지 않고, + 버튼을 누르거나 엔터를 누르면 아무런 반응이 없습니다. 텍스트 입력 값이 없을 때의 UI 예외 처리를 하지 않았기 떄문입니다. 뷰 공식사이트에서 제공하는 팝업 대화상자인 모달(modal)을 활용해 보겠습니다.</p>
+
+<p>components 폴더 안에 common 폴더를 만들고 Modal.vue 파일을 생성합니다. 모달 소스 코드는 https://vuejs.org/v2/examples/modal.html에서 가져옵니다. HTML의 <code class="language-plaintext highlighter-rouge">&lt;transition&gt;</code> 태그 코드와 CSS 부분을 복사해 가져옵니다. <code class="language-plaintext highlighter-rouge">&lt;transition&gt;</code> 코드는 <code class="language-plaintext highlighter-rouge">&lt;template&gt;</code> 태그에 넣고, CSS 코드는 <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> 태그에 넣습니다.</p>
+
+<p>모달에 표시할 헤더(header)와 푸터(footer)를 정의하는 코드를 추가합니다. TodoInput.vue 파일의 <code class="language-plaintext highlighter-rouge">&lt;span&gt;</code> 태그 아래에 <code class="language-plaintext highlighter-rouge">&lt;modal&gt;</code> 태그와 옵션들을 추가하여 모달이 동작할 때 표시될 정보를 정의합니다.</p>
+
+<h3 id="todoinputvue의-template-태그">TodoInput.vue의 <code class="language-plaintext highlighter-rouge">&lt;template&gt;</code> 태그</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inputBox shadow"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">v-model=</span><span class="s">"newTodoItem"</span> <span class="na">placeholder=</span><span class="s">"Type what you have to do"</span> <span class="na">v-on:keyup.enter=</span><span class="s">"addTodo"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"addContainer"</span> <span class="na">v-on:click=</span><span class="s">"addTodo"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"addBtn fas fa-plus"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span>
+        <span class="nt">&lt;/span&gt;</span>
+
+        <span class="nt">&lt;modal</span> <span class="na">v-if=</span><span class="s">"showModal"</span> <span class="err">@</span><span class="na">close=</span><span class="s">"showModal = false"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3</span> <span class="na">slot=</span><span class="s">"header"</span><span class="nt">&gt;</span>경고<span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">slot=</span><span class="s">"footer"</span> <span class="err">@</span><span class="na">click=</span><span class="s">"showModal = false"</span><span class="nt">&gt;</span>
+                할 일을 입력하세요.
+                <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"closeModalBtn fas fa-times"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span>
+            <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/modal&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre></div></div>
+
+<p>생성한 Modal.vue 파일을 TodoInput.vue 파일에서 컴포넌트로 등록합니다.</p>
+
+<h3 id="todoinputvue의-script-태그">TodoInput.vue의 <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> 태그</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;
+import Modal from './common/Modal.vue'
+
+export default {
+    data() {
+        return {
+            newTodoItem: '',
+            showModal: false
+        }
+    },
+    methods: {
+        addTodo() {
+            if (this.newTodoItem !== "") {
+                var value = this.newTodoItem &amp;&amp; this.newTodoItem.trim();
+                this.$emit('addTodo', value);
+                this.clearInput();
+            } else {
+                this.showModal = !this.showModal;
+            }
+        },
+        clearInput() {
+            this.newTodoItem = '';
+        }
+    },
+    components: {
+        Modal: Modal
+    }
+}
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>추가한 코드를 실행한 후 인풋 박스에 아무것도 입력하지 않고 + 버튼을 누르면 아래 화면처럼 모달이 나타납니다.</p>
+
+<p><img src="/images/todomodal.PNG" alt="todomodal" /></p>
+
+<p>지금까지 뷰 CLI로 webpack-simple 프로젝트를 생성하여 화면을 컴포넌트 기반으로 설계한 다음 각각의 컴포넌트를 제작해 컴포넌트 간의 데이터 전달까지 구현했습니다. 이러한 설계와 구현 절차는 실제 뷰 프레임워크로 애플리케이션을 만들 때의 절차와 동일합니다. 따라서 만들고자 하는 서비스의 성격에 따라 webpack 또는 webpack-simple 등의 프로젝트 템플릿을 정한 후 앞에서 진행한 흐름대로 애플리케이션을 구현하면 됩니다.</p>
+
+<hr />
+
+  </div><a class="u-url" href="/2021/01/21/todoux.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Web Developer from Vue.js</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Web Developer from Vue.js</li><li><a class="u-email" href="mailto:javascriptvuejs@gmail.com">javascriptvuejs@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/javascriptvuejs"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">javascriptvuejs</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Vue.js 프레임워크 기술을 포스팅합니다. HTML, CSS, Javascript의 기초를 알면 Vue.js 프레임워크를 익히기에 더욱 좋습니다.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
